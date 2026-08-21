@@ -33,7 +33,16 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
+
+<div class="animated-bg">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+  body{
   font-family:"Cairo","Manrope",sans-serif;
   background:
     radial-gradient(circle at 80% 0%,rgba(76,157,176,.13),transparent 28rem),
@@ -337,7 +346,99 @@ footer{padding:65px 0 30px;border-top:1px solid var(--line);background:#04090b}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
-</style>
+</style>/* =========================
+   YUBIX ANIMATED BACKGROUND
+========================= */
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #050a0d;
+}
+
+.animated-bg span {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: .12;
+  animation: floatOrb 15s infinite ease-in-out;
+}
+
+/* الأزرق */
+.animated-bg span:nth-child(1) {
+  background: #4C9DB0;
+  top: -100px;
+  right: 10%;
+}
+
+/* الأصفر */
+.animated-bg span:nth-child(2) {
+  background: #FFEBAF;
+  bottom: -120px;
+  left: 10%;
+  animation-delay: -4s;
+}
+
+/* أزرق ثاني */
+.animated-bg span:nth-child(3) {
+  background: #4C9DB0;
+  top: 40%;
+  left: -150px;
+  animation-delay: -7s;
+}
+
+/* أصفر ثاني */
+.animated-bg span:nth-child(4) {
+  background: #FFEBAF;
+  top: 20%;
+  right: -150px;
+  animation-delay: -10s;
+}
+
+/* نقاط ضوئية */
+.animated-bg span:nth-child(5),
+.animated-bg span:nth-child(6) {
+  width: 180px;
+  height: 180px;
+  filter: blur(60px);
+  background: #4C9DB0;
+  opacity: .08;
+  animation-duration: 20s;
+}
+
+.animated-bg span:nth-child(5) {
+  top: 65%;
+  right: 35%;
+}
+
+.animated-bg span:nth-child(6) {
+  top: 10%;
+  left: 35%;
+  animation-delay: -8s;
+}
+
+@keyframes floatOrb {
+  0%,100% {
+    transform: translate(0,0) scale(1);
+  }
+
+  25% {
+    transform: translate(80px,-50px) scale(1.12);
+  }
+
+  50% {
+    transform: translate(-50px,80px) scale(.9);
+  }
+
+  75% {
+    transform: translate(60px,40px) scale(1.08);
+  }
+}
 </head>
 <body>
 
@@ -615,6 +716,16 @@ if(window.gsap){
    gsap.from(el,{y:25,opacity:0,duration:.65,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 88%",once:true}})
  });
 }
-</script>
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 2;
+  const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+  document.querySelectorAll(".animated-bg span").forEach((orb, index) => {
+    const speed = (index + 1) * 8;
+
+    orb.style.marginLeft = `${x * speed}px`;
+    orb.style.marginTop = `${y * speed}px`;
+  });
+});</script>
 </body>
 </html>
