@@ -44,6 +44,7 @@ html{scroll-behavior:smooth}
   color:var(--text);overflow-x:hidden;
 }
 body.no-scroll{overflow:hidden}
+body > *:not(.animated-bg){position:relative;z-index:1}
 a{text-decoration:none;color:inherit}
 button,input{font:inherit}
 button{border:0;cursor:pointer}
@@ -348,7 +349,7 @@ footer{padding:65px 0 30px;border-top:1px solid var(--line);background:#04090b}
 .animated-bg{
   position:fixed;
   inset:0;
-  z-index:-1;
+  z-index:0;
   overflow:hidden;
   pointer-events:none;
   background-color:#050a0d;
