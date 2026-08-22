@@ -339,7 +339,8 @@ footer{padding:65px 0 30px;border-top:1px solid var(--line);background:#04090b}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
-</style>
+
+
 /* =========================
    YUBIX ANIMATED BACKGROUND
 ========================= */
@@ -428,6 +429,7 @@ footer{padding:65px 0 30px;border-top:1px solid var(--line);background:#04090b}
     transform:translate(60px,40px) scale(1.08);
   }
 }
+</style>
 </head>
 <body>
 <div class="animated-bg" aria-hidden="true">
@@ -696,6 +698,7 @@ document.getElementById("heroVisual").addEventListener("mouseleave",e=>{e.curren
 function countdown(){
  let end=localStorage.getItem("yubixOfferEnd");
  if(!end){end=Date.now()+2*864e5+14*36e5+32*6e4;localStorage.setItem("yubixOfferEnd",end)}
+ if(+end<=Date.now()){end=Date.now()+2*864e5+14*36e5+32*6e4;localStorage.setItem("yubixOfferEnd",end)}
  let d=Math.max(0,+end-Date.now()),s=Math.floor(d/1000),days=Math.floor(s/86400);s%=86400;let h=Math.floor(s/3600);s%=3600;let m=Math.floor(s/60);s%=60;
  document.getElementById("days").textContent=String(days).padStart(2,"0");document.getElementById("hours").textContent=String(h).padStart(2,"0");document.getElementById("minutes").textContent=String(m).padStart(2,"0");document.getElementById("seconds").textContent=String(s).padStart(2,"0")
 }
