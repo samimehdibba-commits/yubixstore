@@ -44,7 +44,6 @@ html{scroll-behavior:smooth}
   color:var(--text);overflow-x:hidden;
 }
 body.no-scroll{overflow:hidden}
-body > *:not(.animated-bg){position:relative;z-index:1}
 a{text-decoration:none;color:inherit}
 button,input{font:inherit}
 button{border:0;cursor:pointer}
@@ -349,7 +348,7 @@ footer{padding:65px 0 30px;border-top:1px solid var(--line);background:#04090b}
 .animated-bg{
   position:fixed;
   inset:0;
-  z-index:0;
+  z-index:-1;
   overflow:hidden;
   pointer-events:none;
   background-color:#050a0d;
@@ -436,6 +435,67 @@ footer{padding:65px 0 30px;border-top:1px solid var(--line);background:#04090b}
   75%{
     transform:translate(60px,40px) scale(1.08);
   }
+}
+
+
+/* =====================================================
+   YUBIX STORE — RESPONSIVE MOBILE / TABLET / DESKTOP
+   ===================================================== */
+html, body { width:100%; max-width:100%; overflow-x:hidden; }
+img, video, canvas, svg { max-width:100%; height:auto; }
+
+/* Desktop: use the available screen without becoming oversized */
+@media (min-width:1001px){
+  .container{ width:calc(100% - 56px); max-width:1280px; margin-inline:auto; }
+  .hero-grid{ gap:clamp(30px,5vw,80px); }
+  .hero h1{ font-size:clamp(44px,5vw,72px); }
+  .product-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .categories{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+
+/* Tablet */
+@media (min-width:651px) and (max-width:1000px){
+  .container{ width:calc(100% - 40px); max-width:900px; margin-inline:auto; }
+  .hero h1{ font-size:clamp(40px,6vw,60px); }
+  .categories{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .product-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+
+/* Phones */
+@media (max-width:650px){
+  *{ box-sizing:border-box; }
+  .container{ width:calc(100% - 28px) !important; max-width:none; margin-inline:auto; }
+  .nav{ width:100%; max-width:100%; }
+  .hero-grid{ grid-template-columns:1fr !important; }
+  .hero-copy{ width:100%; }
+  .hero h1{ font-size:clamp(32px,9.5vw,46px) !important; line-height:1.15; }
+  .hero p{ max-width:100%; }
+  .cta-row{ flex-wrap:wrap; }
+  .cta-row .btn{ flex:1 1 140px; min-width:0; }
+  .categories{ grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  .product-grid{ grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  .product-card{ min-width:0; }
+  .product-img{ width:100%; }
+  .product-info h3{ overflow-wrap:anywhere; }
+  .offer{ width:100%; }
+  .testimonials{ grid-template-columns:1fr !important; }
+  .footer-grid{ grid-template-columns:1fr 1fr !important; }
+  .search-top{ width:100%; }
+  .search-top input{ width:100%; max-width:100%; }
+  .modal{ padding:12px; }
+  .modal-content{ width:100%; max-width:100%; }
+}
+
+/* Very small phones */
+@media (max-width:380px){
+  .container{ width:calc(100% - 20px) !important; }
+  .brand{ font-size:16px; }
+  .hero h1{ font-size:31px !important; }
+  .categories{ gap:8px; }
+  .product-grid{ gap:8px; }
+  .product-img{ height:150px !important; }
+  .product-info{ padding:9px !important; }
+  .price{ font-size:14px !important; }
 }
 </style>
 </head>
