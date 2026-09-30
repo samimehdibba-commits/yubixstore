@@ -1,466 +1,1402 @@
-[30/09/2026 22:52] Sami ait hammouda: <a href="#home" class="logo">
-    <span class="logo-icon">Y</span>
-    <span>YUBIX STORE</span>
-  </a>
-
-  <nav class="nav-links">
-    <a href="#home">الرئيسية</a>
-    <a href="#products">المنتجات</a>
-    <a href="#features">لماذا نحن</a>
-    <a href="#offers">العروض</a>
-  </nav>
-
-  <div class="nav-actions">
-    <button class="icon-button" id="openCart" aria-label="السلة">
-      🛒
-      <span class="cart-badge" id="cartCount">0</span>
-    </button>
-  </div>
-
-</div>
-<!-- =========================
-     HERO
-========================== -->
-
-<section class="hero" id="home">
-
-  <div class="container hero-grid">
-
-    <div>
-
-      <div class="eyebrow">
-        <span class="eyebrow-dot"></span>
-        YUBIX STORE IS BACK
-      </div>
-
-      <h1>
-        كل ما تحتاجه
-        <br>
-        <span>في مكان واحد.</span>
-      </h1>
-
-      <p class="hero-description">
-        إكسسوارات الهاتف والمنتجات التقنية المختارة بعناية،
-        بأسعار مناسبة وتجربة طلب بسيطة وسريعة.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#products" class="btn btn-primary">
-          اكتشف المنتجات
-        </a>
-
-        <a href="#offers" class="btn btn-secondary">
-          شاهد العروض
-        </a>
-      </div>
-
-    </div>
-
-
-    <div class="hero-visual">
-
-      <div class="hero-circle"></div>
-
-      <div class="floating-card floating-one">
-        ⚡ عروض حصرية
-      </div>
-
-      <div class="hero-phone">
-
-        <div class="phone-notch"></div>
-
-        <div class="phone-screen">
-          YUBIX
-          <br>
-          STORE
-        </div>
-
-      </div>
-
-      <div class="floating-card floating-two">
-        ✓ الدفع عند الاستلام
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     PRODUCTS
-========================== -->
-
-<section id="products">
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <div>
-        <h2>منتجاتنا</h2>
-        <p>اختار المنتج، زيدو للسلة وابعث الطلب.</p>
-      </div>
-
-    </div>
-
-
-    <!-- CATEGORIES -->
-
-    <div class="categories">
-
-      <button class="category-btn active" data-category="all">
-        الكل
-      </button>
-
-      <button class="category-btn" data-category="audio">
-        سماعات
-      </button>
-
-      <button class="category-btn" data-category="power">
-        شحن وطاقة
-      </button>
-
-      <button class="category-btn" data-category="cables">
-        كابلات
-      </button>
-
-      <button class="category-btn" data-category="accessories">
-        إكسسوارات
-      </button>
-
-      <button class="category-btn" data-category="offers">
-        عروض
-      </button>
-
-    </div>
-
-
-    <!-- SEARCH / SORT -->
-
-    <div class="toolbar">
-
-      <label class="search-box">
-
-        <span>⌕</span>
-
-        <input
-          type="search"
-          id="searchInput"
-          placeholder="ابحث عن منتج..."
-        >
-
-      </label>
-
-
-      <select class="sort-select" id="sortSelect">
-
-        <option value="default">
-          ترتيب المنتجات
-        </option>
-
-        <option value="low">
-          السعر: الأقل
-        </option>
-
-        <option value="high">
-          السعر: الأعلى
-        </option>
-
-      </select>
-
-    </div>
-
-
-    <!-- PRODUCTS -->
-
-    <div class="products-grid" id="productsGrid"></div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FEATURES
-========================== -->
-
-<section id="features">
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <div>
-        <h2>علاش YUBIX STORE؟</h2>
-        <p>تجربة بسيطة ومريحة من الطلب حتى الاستلام.</p>
-      </div>
-
-    </div>
-
-
-    <div class="features">
-
-      <div class="feature">
-
-        <div class="feature-icon">
-          🚚
-        </div>
-
-        <h3>
-          الدفع عند الاستلام
-        </h3>
-
-        <p>
-          اطلب المنتج وخلص عند الاستلام حسب طريقة التوصيل المتاحة.
-        </p>
-
-      </div>
-
-
-      <div class="feature">
-
-        <div class="feature-icon">
-          ⚡
-        </div>
-
-        <h3>
-          منتجات مختارة
-        </h3>
-
-        <p>
-          نركزو على المنتجات والإكسسوارات العملية اللي يحتاجها المستخدم يومياً.
-        </p>
-
-      </div>
-[30/09/2026 22:52] Sami ait hammouda: <div class="feature">
-
-        <div class="feature-icon">
-          💬
-        </div>
-
-        <h3>
-          تواصل سريع
-        </h3>
-
-        <p>
-          تابع العروض والمنتجات الجديدة وتواصل معنا عبر قنوات YUBIX STORE.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     OFFER
-========================== -->
-
-<section id="offers">
-
-  <div class="container">
-
-    <div class="offer-banner">
-
-      <div class="offer-circle"></div>
-
-      <div>
-
-        <h2>
-          🔥 عروض YUBIX STORE
-        </h2>
-
-        <p>
-          تابعنا باش ما تفوت حتى عرض جديد.
-        </p>
-
-      </div>
-
-      <!-- بدّل الرابط برابط قناتك -->
-      <a
-        class="btn btn-primary"
-        href="https://t.me/YOUR_CHANNEL"
-        target="_blank"
-      >
-        قناة Telegram
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>YUBIX STORE | Pack 7 en 1</title>
+  <meta name="description" content="Pack 7 en 1 من YUBIX STORE بسعر 4800 دج. الدفع عند الاستلام والتوصيل داخل الجزائر.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --blue:#4c9db0;
+      --blue-dark:#28798d;
+      --blue-light:#e9f8fb;
+      --black:#071014;
+      --dark:#0b171c;
+      --white:#ffffff;
+      --gray:#718087;
+      --border:rgba(76,157,176,.18);
+      --shadow:0 20px 60px rgba(7,16,20,.10);
+      --radius:26px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Cairo",sans-serif;
+      background:#f8fcfd;
+      color:var(--black);
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea{
+      font-family:inherit;
+    }
+
+    /* BACKGROUND */
+    .bg-orb{
+      position:fixed;
+      width:320px;
+      height:320px;
+      border-radius:50%;
+      background:rgba(76,157,176,.12);
+      filter:blur(80px);
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    .orb-1{
+      top:-100px;
+      right:-100px;
+    }
+
+    .orb-2{
+      bottom:10%;
+      left:-150px;
+    }
+
+    /* HEADER */
+    header{
+      position:fixed;
+      top:0;
+      right:0;
+      left:0;
+      z-index:1000;
+      padding:14px 18px;
+    }
+
+    .nav{
+      max-width:1150px;
+      margin:auto;
+      height:64px;
+      padding:0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(255,255,255,.82);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border:1px solid var(--border);
+      border-radius:20px;
+      box-shadow:0 10px 35px rgba(7,16,20,.07);
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:.5px;
+    }
+
+    .logo-icon{
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      color:white;
+      background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+      box-shadow:0 8px 20px rgba(76,157,176,.25);
+    }
+
+    .nav-btn{
+      padding:10px 16px;
+      border-radius:12px;
+      background:var(--black);
+      color:white;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      padding:150px 20px 70px;
+      display:flex;
+      align-items:center;
+    }
+
+    .hero-inner{
+      width:100%;
+      max-width:1150px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:55px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      margin-bottom:20px;
+      border-radius:100px;
+      background:var(--blue-light);
+      color:var(--blue-dark);
+      font-size:13px;
+      font-weight:800;
+      border:1px solid var(--border);
+    }
+
+    .badge span{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#29b56f;
+      box-shadow:0 0 0 5px rgba(41,181,111,.12);
+    }
+
+    h1{
+      font-size:clamp(42px,6vw,74px);
+      line-height:1.05;
+      letter-spacing:-2px;
+      margin-bottom:22px;
+      font-weight:900;
+    }
+
+    h1 strong{
+      color:var(--blue);
+    }
+
+    .hero-text{
+      max-width:600px;
+      color:var(--gray);
+      font-size:17px;
+      line-height:1.9;
+      margin-bottom:28px;
+    }
+
+    .price-box{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-bottom:28px;
+    }
+
+    .price{
+      font-size:36px;
+      font-weight:900;
+      color:var(--black);
+    }
+
+    .price small{
+      font-size:15px;
+      color:var(--gray);
+      font-weight:700;
+    }
+
+    .old-price{
+      color:#9ba8ad;
+      text-decoration:line-through;
+      font-size:15px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+      min-height:54px;
+      padding:0 25px;
+      border-radius:15px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-size:15px;
+      font-weight:800;
+      transition:.25s ease;
+      cursor:pointer;
+      border:none;
+    }
+
+    .primary-btn{
+      background:var(--black);
+      color:white;
+      box-shadow:0 14px 30px rgba(7,16,20,.18);
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 35px rgba(7,16,20,.24);
+    }
+
+    .secondary-btn{
+      background:white;
+      color:var(--black);
+      border:1px solid var(--border);
+    }
+
+    .secondary-btn:hover{
+      transform:translateY(-3px);
+      border-color:var(--blue);
+    }
+
+    .delivery-note{
+      margin-top:17px;
+      color:var(--gray);
+      font-size:12px;
+    }
+
+    /* PRODUCT VISUAL */
+    .product-showcase{
+      position:relative;
+      min-height:520px;
+      display:grid;
+      place-items:center;
+    }
+
+    .product-card{
+      width:min(430px,90%);
+      aspect-ratio:1/1;
+      border-radius:38px;
+      background:
+        radial-gradient(circle at 50% 35%,rgba(76,157,176,.20),transparent 45%),
+        linear-gradient(145deg,#ffffff,#edf8fa);
+      border:1px solid rgba(76,157,176,.15);
+      box-shadow:var(--shadow);
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+      transform:rotate(2deg);
+      animation:float 5s ease-in-out infinite;
+    }
+
+    .product-card::before{
+      content:"";
+      position:absolute;
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      border:1px solid rgba(76,157,176,.16);
+    }
+
+    .product-card::after{
+      content:"7 EN 1";
+      position:absolute;
+      top:25px;
+      left:25px;
+      padding:7px 13px;
+      border-radius:100px;
+      background:var(--black);
+      color:white;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:1px;
+    }
+
+    .pack-placeholder{
+      position:relative;
+      z-index:2;
+      width:72%;
+      aspect-ratio:1.2/1;
+      border-radius:25px;
+      border:2px dashed rgba(76,157,176,.35);
+      display:grid;
+      place-items:center;
+      color:var(--blue-dark);
+      text-align:center;
+      padding:25px;
+      background:rgba(255,255,255,.55);
+    }
+
+    .pack-placeholder b{
+      display:block;
+      font-size:30px;
+      margin-bottom:5px;
+    }
+
+    .pack-placeholder span{
+      font-size:13px;
+      color:var(--gray);
+    }
+
+    .floating{
+      position:absolute;
+      z-index:4;
+      background:white;
+      border:1px solid var(--border);
+      box-shadow:0 12px 35px rgba(7,16,20,.10);
+      border-radius:16px;
+      padding:11px 15px;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .float-1{
+      top:70px;
+      right:0;
+    }
+
+    .float-2{
+      bottom:75px;
+      left:0;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0) rotate(2deg)}
+      50%{transform:translateY(-12px) rotate(2deg)}
+    }
+
+    /* SECTIONS */
+    section{
+      padding:90px 20px;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:650px;
+      margin:0 auto 45px;
+    }
+
+    .section-label{
+      color:var(--blue-dark);
+      font-size:13px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .section-title{
+      font-size:clamp(30px,5vw,48px);
+      line-height:1.15;
+      margin-bottom:13px;
+      font-weight:900;
+    }
+
+    .section-description{
+      color:var(--gray);
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    /* PRODUCTS */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .item{
+      padding:22px 18px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:22px;
+      text-align:center;
+      box-shadow:0 10px 35px rgba(7,16,20,.04);
+      transition:.25s ease;
+    }
+
+    .item:hover{
+      transform:translateY(-7px);
+      box-shadow:0 18px 45px rgba(7,16,20,.09);
+    }
+
+    .item-icon{
+      width:58px;
+      height:58px;
+      margin:0 auto 15px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:var(--blue-light);
+      font-size:26px;
+    }
+
+    .item h3{
+      font-size:15px;
+      margin-bottom:6px;
+    }
+
+    .item p{
+      color:var(--gray);
+      font-size:12px;
+      line-height:1.6;
+    }
+
+    /* BENEFITS */
+    .benefits-section{
+      background:var(--dark);
+      color:white;
+    }
+
+    .benefits-section .section-description{
+      color:#a9b9be;
+    }
+
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .benefit{
+      padding:28px;
+      border-radius:24px;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .benefit-icon{
+      font-size:27px;
+      margin-bottom:15px;
+    }
+
+    .benefit h3{
+      margin-bottom:8px;
+      font-size:17px;
+    }
+
+    .benefit p{
+      color:#9eafb4;
+      line-height:1.8;
+      font-size:13px;
+    }
+
+    /* OFFER */
+    .offer{
+      padding:40px;
+      border-radius:32px;
+      background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+      color:white;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 25px 60px rgba(76,157,176,.25);
+    }
+
+    .offer::before{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:50%;
+      left:-100px;
+      top:-150px;
+    }
+
+    .offer-content{
+      position:relative;
+      z-index:2;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+
+    .offer h2{
+      font-size:32px;
+      margin-bottom:7px;
+    }
+
+    .offer p{
+      color:rgba(255,255,255,.8);
+      font-size:14px;
+    }
+
+    .offer .primary-btn{
+      background:white;
+      color:var(--black);
+      white-space:nowrap;
+    }
+
+    /* ORDER */
+    .order-section{
+      background:#f1f8fa;
+    }
+
+    .order-wrap{
+      max-width:900px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:25px;
+      align-items:stretch;
+    }
+
+    .order-info{
+      padding:35px;
+      border-radius:28px;
+      background:var(--black);
+      color:white;
+    }
+
+    .order-info h2{
+      font-size:30px;
+      line-height:1.25;
+      margin-bottom:15px;
+    }
+
+    .order-info p{
+      color:#9eafb4;
+      font-size:14px;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .contact{
+      padding:15px;
+      border-radius:16px;
+      background:rgba(255,255,255,.06);
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .form-card{
+      padding:30px;
+      background:white;
+      border-radius:28px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .form-card h3{
+      font-size:22px;
+      margin-bottom:5px;
+    }
+
+    .form-card > p{
+      color:var(--gray);
+      font-size:12px;
+      margin-bottom:22px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:13px;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .field.full{
+      grid-column:1/-1;
+    }
+
+    .field label{
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .field input,
+    .field select,
+    .field textarea{
+      width:100%;
+      border:1px solid #dce8eb;
+      background:#fbfdfe;
+      outline:none;
+      border-radius:13px;
+      padding:13px 14px;
+      font-size:13px;
+      color:var(--black);
+      transition:.2s ease;
+    }
+
+    .field textarea{
+      min-height:80px;
+      resize:vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus{
+      border-color:var(--blue);
+      box-shadow:0 0 0 4px rgba(76,157,176,.09);
+    }
+
+    .submit-btn{
+      width:100%;
+      margin-top:15px;
+      min-height:53px;
+      border:0;
+      border-radius:14px;
+      background:var(--blue);
+      color:white;
+      font-size:15px;
+      font-weight:900;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .submit-btn:hover{
+      background:var(--blue-dark);
+      transform:translateY(-2px);
+    }
+
+    .form-note{
+      text-align:center;
+      color:var(--gray);
+      font-size:10px;
+      margin-top:10px;
+    }
+
+    /* FAQ */
+    .faq{
+      max-width:800px;
+      margin:auto;
+      display:grid;
+      gap:10px;
+    }
+
+    details{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:18px 20px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    details p{
+      color:var(--gray);
+      font-size:13px;
+      line-height:1.8;
+      padding-top:13px;
+    }
+
+    /* FOOTER */
+    footer{
+      padding:35px 20px;
+      background:var(--black);
+      color:white;
+      text-align:center;
+    }
+
+    footer strong{
+      color:var(--blue);
+    }
+
+    footer p{
+      color:#8d9da2;
+      font-size:11px;
+      margin-top:7px;
+    }
+
+    /* TOAST */
+    .toast{
+      position:fixed;
+      bottom:20px;
+      left:20px;
+      right:20px;
+      max-width:450px;
+      margin:auto;
+      padding:15px 18px;
+      border-radius:15px;
+      background:var(--black);
+      color:white;
+      text-align:center;
+      font-size:13px;
+      font-weight:700;
+      transform:translateY(150%);
+      transition:.3s ease;
+      z-index:2000;
+    }
+
+    .toast.show{
+      transform:translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:850px){
+      .hero-inner{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:25px;
+      }
+
+      .hero{
+        padding-top:125px;
+      }
+
+      .hero-text{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .price-box,
+      .hero-actions{
+        justify-content:center;
+      }
+
+      .product-showcase{
+        min-height:420px;
+      }
+
+      .products{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .benefits{
+        grid-template-columns:1fr;
+      }
+
+      .order-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .offer-content{
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+
+    @media(max-width:520px){
+      header{
+        padding:10px;
+      }
+
+      .nav{
+        height:58px;
+        padding:0 12px;
+      }
+
+      .logo{
+        font-size:15px;
+      }
+
+      .logo-icon{
+        width:34px;
+        height:34px;
+      }
+
+      .nav-btn{
+        font-size:11px;
+        padding:9px 11px;
+      }
+
+      .hero{
+        padding:105px 15px 50px;
+      }
+
+      h1{
+        font-size:44px;
+        letter-spacing:-1.5px;
+      }
+
+      .hero-text{
+        font-size:14px;
+      }
+
+      .price{
+        font-size:31px;
+      }
+
+      .primary-btn,
+      .secondary-btn{
+        width:100%;
+      }
+
+      .product-showcase{
+        min-height:350px;
+      }
+
+      .product-card{
+        width:90%;
+        border-radius:28px;
+      }
+
+      .floating{
+        font-size:10px;
+      }
+
+      section{
+        padding:65px 15px;
+      }
+
+      .products{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+
+      .item{
+        padding:17px 10px;
+      }
+
+      .item-icon{
+        width:48px;
+        height:48px;
+        font-size:21px;
+        border-radius:14px;
+      }
+
+      .item h3{
+        font-size:12px;
+      }
+
+      .item p{
+        font-size:10px;
+      }
+
+      .offer{
+        padding:28px 20px;
+      }
+
+      .offer h2{
+        font-size:25px;
+      }
+
+      .order-info,
+      .form-card{
+        padding:23px;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .field.full{
+        grid-column:auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="nav">
+      <a href="#" class="logo">
+        <span class="logo-icon">Y</span>
+        YUBIX STORE
       </a>
 
-    </div>
-
-  </div>
-
-</section>
-<div class="container">
-
-  <div class="footer-grid">
-
-    <div>
-
-      <h3>
-        YUBIX STORE
-      </h3>
-
-      <p>
-        متجر إكسسوارات الهاتف والمنتجات التقنية.
-      </p>
-
-      <p>
-        منتجات عملية، عروض مميزة وتجربة طلب سهلة.
-      </p>
-
-    </div>
+      <a href="#order" class="nav-btn">
+        اطلب الآن
+      </a>
+    </nav>
+  </header>
 
 
-    <div>
+  <!-- HERO -->
+  <main>
 
-      <h3>
-        روابط
-      </h3>
+    <section class="hero">
+      <div class="hero-inner">
 
-      <p>
-        <a href="#home">الرئيسية</a>
-      </p>
+        <div class="hero-content">
 
-      <p>
-        <a href="#products">المنتجات</a>
-      </p>
+          <div class="badge">
+            <span></span>
+            العرض متوفر الآن
+          </div>
 
-      <p>
-        <a href="#offers">العروض</a>
-      </p>
+          <h1>
+            7 عفايس<br>
+            <strong>في Pack واحد.</strong>
+          </h1>
 
-    </div>
+          <p class="hero-text">
+            كل واش تحتاجو للاستعمال اليومي في باك واحد وبسعر مناسب.
+            منتجات عملية، مفيدة، وتقدر تاخذهم كامل في طلبية وحدة.
+          </p>
 
+          <div class="price-box">
+            <div class="price">
+              4,800 <small>دج</small>
+            </div>
+          </div>
 
-    <div>
+          <div class="hero-actions">
+            <a href="#order" class="primary-btn">
+              🛒 اطلب الـPack الآن
+            </a>
 
-      <h3>
-        تواصل
-      </h3>
+            <a href="tel:0792900576" class="secondary-btn">
+              📞 07 92 90 05 76
+            </a>
+          </div>
 
-      <!-- بدّل الروابط -->
+          <p class="delivery-note">
+            🚚 الدفع عند الاستلام • توصيل داخل الجزائر
+          </p>
 
-      <p>
-        <a
-          href="https://t.me/YOUR_CHANNEL"
-          target="_blank"
-        >
-          Telegram
-        </a>
-      </p>
-
-      <p>
-        <a
-          href="https://instagram.com/YOUR_USERNAME"
-          target="_blank"
-        >
-          Instagram
-        </a>
-      </p>
-
-    </div>
-
-  </div>
+        </div>
 
 
-  <div class="copyright">
-    © 2026 YUBIX STORE — جميع الحقوق محفوظة
-  </div>
+        <!-- PRODUCT VISUAL -->
+        <div class="product-showcase">
 
-</div>
-<aside class="cart-drawer">
+          <div class="floating float-1">
+            ⚡ عرض 7 منتجات
+          </div>
 
-  <div class="cart-header">
+          <div class="product-card">
 
-    <h2>
-      سلة المشتريات
-    </h2>
+            <!--
+              بدّل هذا الجزء بصورة الـPack الحقيقية.
+              مثال:
+              <img src="images/pack.jpg" alt="YUBIX STORE Pack 7 en 1">
+            -->
 
-    <button
-      class="close-cart"
-      id="closeCart"
-    >
-      ✕
-    </button>
+            <div class="pack-placeholder">
+              <div>
+                <b>PACK 7 EN 1</b>
+                <span>ضع صورة الـPack الحقيقية هنا</span>
+              </div>
+            </div>
 
-  </div>
+          </div>
 
+          <div class="floating float-2">
+            ✓ الدفع عند الاستلام
+          </div>
 
-  <div id="cartItems"></div>
+        </div>
 
-
-  <div class="checkout">
-
-    <div class="total-row">
-
-      <span>
-        المجموع
-      </span>
-
-      <span id="cartTotal">
-        0 دج
-      </span>
-
-    </div>
+      </div>
+    </section>
 
 
-    <form
-      class="order-form"
-      id="orderForm"
-    >
+    <!-- CONTENT -->
+    <section>
+      <div class="container">
 
-      <input
-        type="text"
-        id="customerName"
-        placeholder="الاسم واللقب"
-        required
-      >
+        <div class="section-head">
+          <div class="section-label">ماذا يوجد داخل الـPack؟</div>
 
-      <input
-        type="tel"
-        id="customerPhone"
-        placeholder="رقم الهاتف"
-        required
-      >
+          <h2 class="section-title">
+            7 منتجات في عرض واحد
+          </h2>
 
-      <input
-        type="text"
-        id="customerWilaya"
-        placeholder="الولاية"
-        required
-      >
-
-      <input
-        type="text"
-        id="customerCommune"
-        placeholder="البلدية"
-      >
-
-      <textarea
-        id="customerAddress"
-        placeholder="العنوان بالتفصيل"
-      ></textarea>
+          <p class="section-description">
+            مجموعة من الإكسسوارات العملية اللي تقدر تستعملها يوميًا.
+          </p>
+        </div>
 
 
-      <button
-        type="submit"
-        class="btn btn-primary"
-      >
-        إرسال الطلب
-      </button>
+        <div class="products">
 
-    </form>
+          <div class="item">
+            <div class="item-icon">🎧</div>
+            <h3>AirPods Pro</h3>
+            <p>سماعات للاستعمال اليومي.</p>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">🔋</div>
+            <h3>Power Bank</h3>
+            <p>سعة 10,000mAh.</p>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">🔌</div>
+            <h3>Fast Charge Cable</h3>
+            <p>كابل للشحن السريع.</p>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">📱</div>
+            <h3>Phone Holder</h3>
+            <p>حامل هاتف عملي.</p>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">👝</div>
+            <h3>محفظة</h3>
+            <p>محفظة للاستخدام اليومي.</p>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">🎁</div>
+            <h3>إكسسوار</h3>
+            <p>قطعة إضافية ضمن الـPack.</p>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">✨</div>
+            <h3>إكسسوار إضافي</h3>
+            <p>قطعة أخرى ضمن العرض.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
 
 
-    <p class="payment-note">
-      الدفع عند الاستلام. سيتم تأكيد الطلب والتواصل معك قبل الإرسال.
+    <!-- BENEFITS -->
+    <section class="benefits-section">
+
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-label">
+            YUBIX STORE
+          </div>
+
+          <h2 class="section-title">
+            علاش تختار الـPack؟
+          </h2>
+
+          <p class="section-description">
+            عرض بسيط يجمعلك عدة إكسسوارات في طلب واحد.
+          </p>
+        </div>
+
+
+        <div class="benefits">
+
+          <div class="benefit">
+            <div class="benefit-icon">📦</div>
+            <h3>7 منتجات</h3>
+            <p>
+              بدل ما تشري كل منتج وحدو، تلقاهم مجموعين في Pack واحد.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">💰</div>
+            <h3>4,800 دج</h3>
+            <p>
+              سعر العرض واضح بدون تعقيد، وتقدر تطلب مباشرة من الصفحة.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">🚚</div>
+            <h3>الدفع عند الاستلام</h3>
+            <p>
+              تعمر معلوماتك، ونواصلو معاك لتأكيد الطلب والتوصيل.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+    <section>
+
+      <div class="container">
+
+        <div class="offer">
+
+          <div class="offer-content">
+
+            <div>
+              <h2>جاهز تطلب الـPack؟ 🔥</h2>
+
+              <p>
+                السعر: 4,800 دج • الدفع عند الاستلام
+              </p>
+            </div>
+
+            <a href="#order" class="primary-btn">
+              اطلب الآن
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ORDER -->
+    <section class="order-section" id="order">
+
+      <div class="order-wrap">
+
+        <div class="order-info">
+
+          <h2>
+            دير طلبك في أقل من دقيقة.
+          </h2>
+
+          <p>
+            عَمّر معلوماتك، ونواصلو معاك لتأكيد الطلب قبل الإرسال.
+          </p>
+
+          <div class="contact">
+            📞 07 92 90 05 76
+          </div>
+
+        </div>
+
+
+        <div class="form-card">
+
+          <h3>معلومات الطلب</h3>
+
+          <p>
+            جميع المعلومات تستعمل فقط لمعالجة طلبك.
+          </p>
+
+          <form id="orderForm">
+
+            <div class="form-grid">
+
+              <div class="field">
+                <label>الاسم واللقب</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="مثال: محمد أحمد"
+                  required
+                >
+              </div>
+
+              <div class="field">
+                <label>رقم الهاتف</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="07XXXXXXXX"
+                  required
+                >
+              </div>
+
+              <div class="field">
+                <label>الولاية</label>
+                <input
+                  type="text"
+                  id="wilaya"
+                  placeholder="مثال: برج بوعريريج"
+                  required
+                >
+              </div>
+
+              <div class="field">
+                <label>البلدية</label>
+                <input
+                  type="text"
+                  id="commune"
+                  placeholder="اسم البلدية"
+                  required
+                >
+              </div>
+
+              <div class="field full">
+                <label>العنوان</label>
+                <textarea
+                  id="address"
+                  placeholder="العنوان بالتفصيل"
+                  required
+                ></textarea>
+              </div>
+
+            </div>
+
+            <button type="submit" class="submit-btn">
+              تأكيد طلب الـPack — 4,800 دج
+            </button>
+
+            <p class="form-note">
+              الدفع عند الاستلام • سيتم التواصل معك لتأكيد الطلب
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-label">
+            FAQ
+          </div>
+
+          <h2 class="section-title">
+            أسئلة متكررة
+          </h2>
+
+        </div>
+
+
+        <div class="faq">
+
+          <details>
+            <summary>هل الدفع عند الاستلام؟</summary>
+            <p>
+              نعم، الدفع يكون عند استلام الطلب.
+            </p>
+          </details>
+
+          <details>
+            <summary>كيفاش نطلب الـPack؟</summary>
+            <p>
+              عَمّر معلوماتك في فورم الطلب، وبعدها يتم التواصل معك لتأكيد الطلب.
+            </p>
+          </details>
+
+          <details>
+            <summary>كم سعر الـPack؟</summary>
+            <p>
+              سعر الـPack هو 4,800 دج.
+            </p>
+          </details>
+
+          <details>
+            <summary>كيفاش نتواصل مع YUBIX STORE؟</summary>
+            <p>
+              تقدر تتواصل معنا عبر الرقم 07 92 90 05 76.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <strong>YUBIX STORE</strong>
+
+    <p>
+      إكسسوارات ومنتجات تقنية • Pack 7 en 1
     </p>
 
-  </div>
+    <p>
+      © 2026 YUBIX STORE. جميع الحقوق محفوظة.
+    </p>
 
-</aside>
+  </footer>
+
+
+  <div class="toast" id="toast"></div>
+
+
+  <script>
+
+    const form = document.getElementById("orderForm");
+    const toast = document.getElementById("toast");
+
+    function showToast(message){
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3500);
+
+    }
+
+
+    form.addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const wilaya = document.getElementById("wilaya").value.trim();
+      const commune = document.getElementById("commune").value.trim();
+      const address = document.getElementById("address").value.trim();
+
+
+      if(!name || !phone || !wilaya || !commune || !address){
+
+        showToast("من فضلك عَمّر جميع المعلومات.");
+        return;
+
+      }
+
+
+      /*
+        مؤقتًا:
+        نفتح WhatsApp برسالة جاهزة.
+
+        لاحقًا نربط الفورم مباشرة بـ Telegram Bot
+        عن طريق Backend / Cloudflare Worker.
+
+        لا تضع Telegram Bot Token هنا داخل index.html.
+      */
+
+      const message =
+`🛍️ طلب جديد — YUBIX STORE
+
+📦 المنتج: Pack 7 en 1
+💰 السعر: 4,800 دج
+
+👤 الاسم: ${name}
+📞 الهاتف: ${phone}
+📍 الولاية: ${wilaya}
+🏘️ البلدية: ${commune}
+🏠 العنوان: ${address}
+
+💳 الدفع: عند الاستلام`;
+
+
+      const whatsappNumber = "213792900576";
+
+      const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+      window.open(whatsappURL, "_blank");
+
+      showToast("تم تجهيز طلبك، سيتم فتح WhatsApp.");
+
+    });
+
+  </script>
+
+</body>
+</html>
