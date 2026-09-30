@@ -1,1566 +1,1193 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <title>YUBIX STORE | Pack 7 en 1</title>
-  <meta name="description" content="Pack 7 en 1 من YUBIX STORE بسعر 4800 دج. الدفع عند الاستلام والتوصيل داخل الجزائر.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --blue:#4c9db0;
-      --blue-dark:#28798d;
-      --blue-light:#e9f8fb;
-      --black:#071014;
-      --dark:#0b171c;
-      --white:#fff;
-      --gray:#718087;
-      --border:rgba(76,157,176,.18);
-      --shadow:0 15px 40px rgba(7,16,20,.08);
-      --radius:22px;
-    }
-
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-      -webkit-tap-highlight-color:transparent;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:"Cairo",sans-serif;
-      background:#f8fcfd;
-      color:var(--black);
-      overflow-x:hidden;
-      width:100%;
-      min-width:0;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    button,
-    input,
-    select,
-    textarea{
-      font-family:inherit;
-    }
-
-    /* =========================
-       BACKGROUND
-    ========================= */
-
-    .bg-orb{
-      position:fixed;
-      width:220px;
-      height:220px;
-      border-radius:50%;
-      background:rgba(76,157,176,.12);
-      filter:blur(70px);
-      pointer-events:none;
-      z-index:-1;
-    }
-
-    .orb-1{
-      top:-80px;
-      right:-80px;
-    }
-
-    .orb-2{
-      bottom:5%;
-      left:-100px;
-    }
-
-    /* =========================
-       HEADER / LOGO
-    ========================= */
-
-    header{
-      position:fixed;
-      top:0;
-      right:0;
-      left:0;
-      width:100%;
-      z-index:1000;
-      padding:9px 10px;
-    }
-
-    .nav{
-      width:100%;
-      max-width:520px;
-      height:58px;
-      margin:auto;
-      padding:0 11px;
-
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-
-      background:rgba(255,255,255,.88);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-
-      border:1px solid var(--border);
-      border-radius:17px;
-
-      box-shadow:0 8px 25px rgba(7,16,20,.07);
-    }
-
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:8px;
-
-      font-size:14px;
-      font-weight:900;
-      letter-spacing:.3px;
-      white-space:nowrap;
-    }
-
-    .logo img{
-      width:34px;
-      height:34px;
-      object-fit:contain;
-      display:block;
-    }
-
-    .nav-btn{
-      padding:8px 12px;
-      border-radius:11px;
-
-      background:var(--black);
-      color:white;
-
-      font-size:11px;
-      font-weight:800;
-      white-space:nowrap;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero{
-      width:100%;
-      min-height:auto;
-      padding:105px 15px 45px;
-    }
-
-    .hero-inner{
-      width:100%;
-      max-width:520px;
-      margin:auto;
-
-      display:flex;
-      flex-direction:column;
-      gap:30px;
-    }
-
-    .hero-content{
-      width:100%;
-      text-align:center;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:7px;
-
-      padding:7px 12px;
-      margin-bottom:17px;
-
-      border-radius:100px;
-      background:var(--blue-light);
-      color:var(--blue-dark);
-
-      font-size:11px;
-      font-weight:800;
-      border:1px solid var(--border);
-    }
-
-    .badge span{
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:#29b56f;
-      box-shadow:0 0 0 4px rgba(41,181,111,.12);
-    }
-
-    h1{
-      font-size:44px;
-      line-height:1.05;
-      letter-spacing:-1.8px;
-      margin-bottom:18px;
-      font-weight:900;
-    }
-
-    h1 strong{
-      color:var(--blue);
-    }
-
-    .hero-text{
-      width:100%;
-      max-width:450px;
-      margin:0 auto 22px;
-
-      color:var(--gray);
-      font-size:13px;
-      line-height:1.9;
-    }
-
-    .price-box{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      margin-bottom:21px;
-    }
-
-    .price{
-      font-size:32px;
-      font-weight:900;
-    }
-
-    .price small{
-      font-size:13px;
-      color:var(--gray);
-      font-weight:700;
-    }
-
-    .hero-actions{
-      width:100%;
-      display:flex;
-      flex-direction:column;
-      gap:9px;
-    }
-
-    .primary-btn,
-    .secondary-btn{
-      width:100%;
-      min-height:50px;
-
-      padding:0 20px;
-      border-radius:14px;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:7px;
-
-      font-size:13px;
-      font-weight:800;
-
-      transition:.2s ease;
-    }
-
-    .primary-btn{
-      background:var(--black);
-      color:white;
-      box-shadow:0 10px 25px rgba(7,16,20,.16);
-    }
-
-    .secondary-btn{
-      background:white;
-      color:var(--black);
-      border:1px solid var(--border);
-    }
-
-    .delivery-note{
-      margin-top:13px;
-      color:var(--gray);
-      font-size:10px;
-    }
-
-    /* =========================
-       PRODUCT
-    ========================= */
-
-    .product-showcase{
-      position:relative;
-      width:100%;
-      min-height:330px;
-
-      display:grid;
-      place-items:center;
-    }
-
-    .product-card{
-      width:min(92%,390px);
-      aspect-ratio:1/1;
-
-      border-radius:29px;
-
-      background:
-        radial-gradient(circle at 50% 35%,rgba(76,157,176,.20),transparent 45%),
-        linear-gradient(145deg,#fff,#edf8fa);
-
-      border:1px solid rgba(76,157,176,.15);
-      box-shadow:var(--shadow);
-
-      display:grid;
-      place-items:center;
-
-      position:relative;
-      overflow:hidden;
-
-      transform:rotate(1deg);
-    }
-
-    .product-card::before{
-      content:"";
-      position:absolute;
-
-      width:190px;
-      height:190px;
-
-      border-radius:50%;
-      border:1px solid rgba(76,157,176,.16);
-    }
-
-    .product-card::after{
-      content:"7 EN 1";
-
-      position:absolute;
-      top:17px;
-      left:17px;
-
-      padding:6px 10px;
-
-      border-radius:100px;
-      background:var(--black);
-      color:white;
-
-      font-size:9px;
-      font-weight:800;
-      letter-spacing:1px;
-    }
-
-    .pack-placeholder{
-      position:relative;
-      z-index:2;
-
-      width:72%;
-      aspect-ratio:1.2/1;
-
-      border-radius:20px;
-      border:2px dashed rgba(76,157,176,.35);
-
-      display:grid;
-      place-items:center;
-
-      color:var(--blue-dark);
-      text-align:center;
-
-      padding:18px;
-      background:rgba(255,255,255,.55);
-    }
-
-    .pack-placeholder b{
-      display:block;
-      font-size:24px;
-      margin-bottom:4px;
-    }
-
-    .pack-placeholder span{
-      font-size:10px;
-      color:var(--gray);
-    }
-
-    .floating{
-      position:absolute;
-      z-index:4;
-
-      background:white;
-      border:1px solid var(--border);
-
-      box-shadow:0 10px 25px rgba(7,16,20,.09);
-      border-radius:13px;
-
-      padding:9px 11px;
-
-      font-size:9px;
-      font-weight:800;
-    }
-
-    .float-1{
-      top:25px;
-      right:0;
-    }
-
-    .float-2{
-      bottom:25px;
-      left:0;
-    }
-
-    /* =========================
-       SECTIONS
-    ========================= */
-
-    section{
-      width:100%;
-      padding:65px 15px;
-    }
-
-    .container{
-      width:100%;
-      max-width:520px;
-      margin:auto;
-    }
-
-    .section-head{
-      text-align:center;
-      width:100%;
-      margin:0 auto 30px;
-    }
-
-    .section-label{
-      color:var(--blue-dark);
-      font-size:11px;
-      font-weight:900;
-      margin-bottom:7px;
-    }
-
-    .section-title{
-      font-size:29px;
-      line-height:1.2;
-      margin-bottom:10px;
-      font-weight:900;
-      letter-spacing:-.7px;
-    }
-
-    .section-description{
-      color:var(--gray);
-      line-height:1.8;
-      font-size:12px;
-    }
-
-    /* =========================
-       PRODUCTS
-    ========================= */
-
-    .products{
-      width:100%;
-
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-    }
-
-    .item{
-      min-width:0;
-
-      padding:18px 10px;
-
-      background:white;
-      border:1px solid var(--border);
-      border-radius:18px;
-
-      text-align:center;
-
-      box-shadow:0 8px 25px rgba(7,16,20,.04);
-    }
-
-    .item-icon{
-      width:48px;
-      height:48px;
-
-      margin:0 auto 11px;
-
-      border-radius:14px;
-
-      display:grid;
-      place-items:center;
-
-      background:var(--blue-light);
-
-      font-size:21px;
-    }
-
-    .item h3{
-      font-size:12px;
-      margin-bottom:5px;
-    }
-
-    .item p{
-      color:var(--gray);
-      font-size:9px;
-      line-height:1.6;
-    }
-
-    /* =========================
-       BENEFITS
-    ========================= */
-
-    .benefits-section{
-      background:var(--dark);
-      color:white;
-    }
-
-    .benefits-section .section-label{
-      color:#69b8ca;
-    }
-
-    .benefits-section .section-description{
-      color:#a9b9be;
-    }
-
-    .benefits{
-      display:flex;
-      flex-direction:column;
-      gap:11px;
-    }
-
-    .benefit{
-      padding:21px;
-
-      border-radius:19px;
-
-      background:rgba(255,255,255,.045);
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .benefit-icon{
-      font-size:23px;
-      margin-bottom:9px;
-    }
-
-    .benefit h3{
-      margin-bottom:6px;
-      font-size:15px;
-    }
-
-    .benefit p{
-      color:#9eafb4;
-      line-height:1.8;
-      font-size:11px;
-    }
-
-    /* =========================
-       OFFER
-    ========================= */
-
-    .offer{
-      width:100%;
-
-      padding:27px 19px;
-
-      border-radius:25px;
-
-      background:linear-gradient(135deg,var(--blue),var(--blue-dark));
-
-      color:white;
-
-      position:relative;
-      overflow:hidden;
-
-      box-shadow:0 20px 45px rgba(76,157,176,.22);
-    }
-
-    .offer-content{
-      position:relative;
-      z-index:2;
-
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-
-      gap:17px;
-
-      text-align:center;
-    }
-
-    .offer h2{
-      font-size:24px;
-      margin-bottom:5px;
-    }
-
-    .offer p{
-      color:rgba(255,255,255,.8);
-      font-size:11px;
-    }
-
-    .offer .primary-btn{
-      background:white;
-      color:var(--black);
-      width:100%;
-    }
-
-    /* =========================
-       ORDER
-    ========================= */
-
-    .order-section{
-      background:#f1f8fa;
-    }
-
-    .order-wrap{
-      width:100%;
-      max-width:520px;
-      margin:auto;
-
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
-
-    .order-info{
-      padding:25px 21px;
-
-      border-radius:23px;
-
-      background:var(--black);
-      color:white;
-    }
-
-    .order-info h2{
-      font-size:25px;
-      line-height:1.3;
-      margin-bottom:11px;
-    }
-
-    .order-info p{
-      color:#9eafb4;
-      font-size:12px;
-      line-height:1.8;
-      margin-bottom:18px;
-    }
-
-    .contact{
-      padding:13px;
-
-      border-radius:14px;
-      background:rgba(255,255,255,.06);
-
-      font-size:12px;
-      font-weight:800;
-      text-align:center;
-    }
-
-    .form-card{
-      width:100%;
-
-      padding:22px 18px;
-
-      background:white;
-
-      border-radius:23px;
-
-      border:1px solid var(--border);
-
-      box-shadow:var(--shadow);
-    }
-
-    .form-card h3{
-      font-size:20px;
-      margin-bottom:4px;
-    }
-
-    .form-card > p{
-      color:var(--gray);
-      font-size:10px;
-      margin-bottom:18px;
-    }
-
-    .form-grid{
-      display:flex;
-      flex-direction:column;
-      gap:11px;
-    }
-
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:5px;
-    }
-
-    .field label{
-      font-size:11px;
-      font-weight:800;
-    }
-
-    .field input,
-    .field select,
-    .field textarea{
-      width:100%;
-
-      border:1px solid #dce8eb;
-      background:#fbfdfe;
-
-      outline:none;
-
-      border-radius:12px;
-
-      padding:12px;
-
-      font-size:12px;
-      color:var(--black);
-
-      transition:.2s ease;
-    }
-
-    .field textarea{
-      min-height:75px;
-      resize:vertical;
-    }
-
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus{
-      border-color:var(--blue);
-
-      box-shadow:
-        0 0 0 4px rgba(76,157,176,.09);
-    }
-
-    .submit-btn{
-      width:100%;
-
-      margin-top:13px;
-
-      min-height:51px;
-
-      border:0;
-      border-radius:13px;
-
-      background:var(--blue);
-      color:white;
-
-      font-size:13px;
-      font-weight:900;
-
-      cursor:pointer;
-    }
-
-    .form-note{
-      text-align:center;
-      color:var(--gray);
-      font-size:9px;
-      margin-top:9px;
-    }
-
-    /* =========================
-       FAQ
-    ========================= */
-
-    .faq{
-      width:100%;
-
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-
-    details{
-      background:white;
-
-      border:1px solid var(--border);
-      border-radius:15px;
-
-      padding:15px 16px;
-    }
-
-    summary{
-      cursor:pointer;
-      font-size:12px;
-      font-weight:800;
-    }
-
-    details p{
-      color:var(--gray);
-      font-size:11px;
-      line-height:1.8;
-      padding-top:10px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer{
-      width:100%;
-
-      padding:30px 15px;
-
-      background:var(--black);
-      color:white;
-
-      text-align:center;
-    }
-
-    footer strong{
-      color:var(--blue);
-      font-size:15px;
-    }
-
-    footer p{
-      color:#8d9da2;
-      font-size:9px;
-      margin-top:6px;
-      line-height:1.7;
-    }
-
-    /* =========================
-       TOAST
-    ========================= */
-
-    .toast{
-      position:fixed;
-
-      bottom:15px;
-      left:12px;
-      right:12px;
-
-      max-width:450px;
-      margin:auto;
-
-      padding:13px 15px;
-
-      border-radius:13px;
-
-      background:var(--black);
-      color:white;
-
-      text-align:center;
-
-      font-size:11px;
-      font-weight:700;
-
-      transform:translateY(150%);
-      transition:.3s ease;
-
-      z-index:2000;
-    }
-
-    .toast.show{
-      transform:translateY(0);
-    }
-
-    /* =========================
-       TABLET / DESKTOP
-       ========================= */
-
-    @media(min-width:700px){
-
-      .hero{
-        padding-top:130px;
-      }
-
-      .hero-inner{
-        max-width:850px;
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:40px;
-        align-items:center;
-      }
-
-      .hero-content{
-        text-align:right;
-      }
-
-      .hero-text{
-        margin-right:0;
-      }
-
-      .price-box{
-        justify-content:flex-start;
-      }
-
-      .hero-actions{
-        flex-direction:row;
-      }
-
-      .primary-btn,
-      .secondary-btn{
-        width:auto;
-      }
-
-      .product-showcase{
-        min-height:450px;
-      }
-
-      .container{
-        max-width:900px;
-      }
-
-      .products{
-        grid-template-columns:repeat(4,1fr);
-      }
-
-      .benefits{
-        display:grid;
-        grid-template-columns:repeat(3,1fr);
-      }
-
-      .order-wrap{
-        max-width:850px;
-        display:grid;
-        grid-template-columns:.8fr 1.2fr;
-      }
-
-      .offer-content{
-        flex-direction:row;
-        justify-content:space-between;
-        text-align:right;
-      }
-
-      .offer .primary-btn{
-        width:auto;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUBIX STORE - Pack 7 en 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #050A0D 0%, #0F1419 100%);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        :root {
+            --primary: #4C9DB0;
+            --secondary: #28798D;
+            --accent: #FFEBAF;
+            --dark: #050A0D;
+            --white: #ffffff;
+            --glass: rgba(76, 157, 176, 0.1);
+            --glass-border: rgba(76, 157, 176, 0.2);
+        }
+
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+        }
+
+        /* Desktop Layout */
+        @media (min-width: 481px) {
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 40px;
+            }
+
+            .grid-2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                align-items: center;
+            }
+
+            .grid-3 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            nav {
+                padding: 30px 40px !important;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5rem !important;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem !important;
+            }
+        }
+
+        /* Mobile First */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .grid-2 {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .grid-3 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 16px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 10, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo {
+            height: 50px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.1;
+            top: -200px;
+            right: -200px;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(76, 157, 176, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* Product Section */
+        .product-hero {
+            padding: 60px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .product-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .product-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .product-features li:before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Cards Section */
+        .cards-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--accent);
+        }
+
+        .card {
+            padding: 30px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(76, 157, 176, 0.1) 100%);
+            z-index: -1;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(76, 157, 176, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 60px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        @media (min-width: 481px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .benefit-item {
+            padding: 25px;
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            background: rgba(76, 157, 176, 0.05);
+        }
+
+        .benefit-item h4 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        /* Form */
+        .form-section {
+            padding: 60px 0;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            background: rgba(76, 157, 176, 0.05);
+            color: var(--white);
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input::placeholder {
+            color: #666;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(76, 157, 176, 0.1);
+            box-shadow: 0 0 20px rgba(76, 157, 176, 0.2);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234C9DB0' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: left 12px center;
+            padding-right: 12px;
+            padding-left: 40px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(76, 157, 176, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: rgba(76, 157, 176, 0.1);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--accent);
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(76, 157, 176, 0.2);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: #aaa;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            color: #888;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        /* Loading & Messages */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 3px solid var(--glass-border);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(76, 157, 176, 0.2);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .error-message {
+            display: none;
+            background: rgba(255, 107, 107, 0.2);
+            border-left: 4px solid #ff6b6b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #ff9999;
+        }
+
+        /* Hide nav on mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+        }
+
+        .slide-up {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .product-tilt {
+            perspective: 1000px;
+        }
+
+        .product-tilt img {
+            transition: transform 0.6s ease;
+        }
+
+        .product-tilt:hover img {
+            transform: rotateX(5deg) rotateY(-5deg);
+        }
+    </style>
 </head>
-
 <body>
-
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-
-
-  <!-- HEADER -->
-  <header>
-    <nav class="nav">
-
-      <a href="#" class="logo">
-
-        <!-- اللوقو الحقيقي -->
-        <img src="logo.png" alt="YUBIX STORE">
-
-        <span>YUBIX STORE</span>
-
-      </a>
-
-      <a href="#order" class="nav-btn">
-        اطلب الآن
-      </a>
-
+    <!-- Navigation -->
+    <nav>
+        <img src="logo.png" alt="YUBIX STORE" class="logo">
+        <ul class="nav-links">
+            <li><a href="#product">المنتج</a></li>
+            <li><a href="#benefits">المميزات</a></li>
+            <li><a href="#order">الطلب</a></li>
+            <li><a href="#faq">الأسئلة</a></li>
+        </ul>
     </nav>
-  </header>
 
-
-  <!-- HERO -->
-  <main>
-
+    <!-- Hero Section -->
     <section class="hero">
-
-      <div class="hero-inner">
-
-        <div class="hero-content">
-
-          <div class="badge">
-            <span></span>
-            العرض متوفر الآن
-          </div>
-
-          <h1>
-            7 عفايس<br>
-            <strong>في Pack واحد.</strong>
-          </h1>
-
-          <p class="hero-text">
-            كل واش تحتاجو للاستعمال اليومي في باك واحد وبسعر مناسب.
-            منتجات عملية، مفيدة، وتقدر تاخذهم كامل في طلبية وحدة.
-          </p>
-
-          <div class="price-box">
-
-            <div class="price">
-              4,800 <small>دج</small>
+        <div class="container">
+            <div class="hero-content">
+                <h1>PACK 7 EN 1</h1>
+                <p>الحل الكامل والشامل لكل احتياجاتك - جودة عالية بسعر لا يقبل المنافسة</p>
+                <a href="#product" class="btn btn-primary">اكتشف المنتج</a>
             </div>
-
-          </div>
-
-          <div class="hero-actions">
-
-            <a href="#order" class="primary-btn">
-              🛒 اطلب الـPack الآن
-            </a>
-
-            <a href="tel:0792900576" class="secondary-btn">
-              📞 07 92 90 05 76
-            </a>
-
-          </div>
-
-          <p class="delivery-note">
-            🚚 الدفع عند الاستلام • توصيل داخل الجزائر
-          </p>
-
         </div>
+    </section>
 
-
-        <!-- PRODUCT -->
-
-        <div class="product-showcase">
-
-          <div class="floating float-1">
-            ⚡ عرض 7 منتجات
-          </div>
-
-          <div class="product-card">
-
-            <div class="pack-placeholder">
-
-              <div>
-
-                <b>PACK 7 EN 1</b>
-
-                <span>
-                  ضع صورة الـPack الحقيقية هنا
-                </span>
-
-              </div>
-
+    <!-- Product Section -->
+    <section id="product" class="product-hero">
+        <div class="container">
+            <div class="grid-2">
+                <div class="product-image product-tilt">
+                    <img src="pack.jpg" alt="Pack 7 en 1">
+                </div>
+                <div class="product-info">
+                    <h2>Pack 7 en 1</h2>
+                    <div class="product-price">
+                        <span>4,800</span>
+                        <span style="font-size: 1.3rem;">دج</span>
+                    </div>
+                    <p style="color: #aaa; margin-bottom: 20px;">منتج متميز يجمع بين 7 خدمات في واحدة</p>
+                    <ul class="product-features">
+                        <li>جودة عالية جداً</li>
+                        <li>ضمان مدى الحياة</li>
+                        <li>دفع عند الاستلام</li>
+                        <li>توصيل مجاني في الجزائر</li>
+                        <li>خدمة عملاء 24/7</li>
+                        <li>سهل الاستخدام</li>
+                        <li>تصميم عصري</li>
+                    </ul>
+                    <a href="#order" class="btn btn-primary">اطلب الآن</a>
+                </div>
             </div>
-
-          </div>
-
-          <div class="floating float-2">
-            ✓ الدفع عند الاستلام
-          </div>
-
         </div>
-
-      </div>
-
     </section>
 
-
-    <!-- PRODUCTS -->
-
-    <section>
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="section-label">
-            ماذا يوجد داخل الـPack؟
-          </div>
-
-          <h2 class="section-title">
-            7 منتجات في عرض واحد
-          </h2>
-
-          <p class="section-description">
-            مجموعة من الإكسسوارات العملية اللي تقدر تستعملها يوميًا.
-          </p>
-
-        </div>
-
-
-        <div class="products">
-
-          <div class="item">
-            <div class="item-icon">🎧</div>
-            <h3>AirPods Pro</h3>
-            <p>سماعات للاستعمال اليومي.</p>
-          </div>
-
-          <div class="item">
-            <div class="item-icon">🔋</div>
-            <h3>Power Bank</h3>
-            <p>سعة 10,000mAh.</p>
-          </div>
-
-          <div class="item">
-            <div class="item-icon">🔌</div>
-            <h3>Fast Charge Cable</h3>
-            <p>كابل للشحن السريع.</p>
-          </div>
-
-          <div class="item">
-            <div class="item-icon">📱</div>
-            <h3>Phone Holder</h3>
-            <p>حامل هاتف عملي.</p>
-          </div>
-
-          <div class="item">
-            <div class="item-icon">👝</div>
-            <h3>محفظة</h3>
-            <p>محفظة للاستخدام اليومي.</p>
-          </div>
-
-          <div class="item">
-            <div class="item-icon">🎁</div>
-            <h3>إكسسوار</h3>
-            <p>قطعة إضافية ضمن الـPack.</p>
-          </div>
-
-          <div class="item">
-            <div class="item-icon">✨</div>
-            <h3>إكسسوار إضافي</h3>
-            <p>قطعة أخرى ضمن العرض.</p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- BENEFITS -->
-
-    <section class="benefits-section">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="section-label">
-            YUBIX STORE
-          </div>
-
-          <h2 class="section-title">
-            علاش تختار الـPack؟
-          </h2>
-
-          <p class="section-description">
-            عرض بسيط يجمعلك عدة إكسسوارات في طلب واحد.
-          </p>
-
-        </div>
-
-
-        <div class="benefits">
-
-          <div class="benefit">
-
-            <div class="benefit-icon">📦</div>
-
-            <h3>7 منتجات</h3>
-
-            <p>
-              بدل ما تشري كل منتج وحدو، تلقاهم مجموعين في Pack واحد.
-            </p>
-
-          </div>
-
-
-          <div class="benefit">
-
-            <div class="benefit-icon">💰</div>
-
-            <h3>4,800 دج</h3>
-
-            <p>
-              سعر العرض واضح بدون تعقيد، وتقدر تطلب مباشرة من الصفحة.
-            </p>
-
-          </div>
-
-
-          <div class="benefit">
-
-            <div class="benefit-icon">🚚</div>
-
-            <h3>الدفع عند الاستلام</h3>
-
-            <p>
-              تعمر معلوماتك، ونواصلو معاك لتأكيد الطلب والتوصيل.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- OFFER -->
-
-    <section>
-
-      <div class="container">
-
-        <div class="offer">
-
-          <div class="offer-content">
-
-            <div>
-
-              <h2>
-                جاهز تطلب الـPack؟ 🔥
-              </h2>
-
-              <p>
-                السعر: 4,800 دج • الدفع عند الاستلام
-              </p>
-
+    <!-- Cards Section -->
+    <section class="cards-section">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار YUBIX؟</h2>
+            <div class="grid-3">
+                <div class="card glass">
+                    <div class="card-icon">⚡</div>
+                    <h3>سرعة التوصيل</h3>
+                    <p>نوصل طلبك خلال 24-48 ساعة في جميع ولايات الجزائر</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon">🛡️</div>
+                    <h3>ضمان كامل</h3>
+                    <p>جميع منتجاتنا مضمونة ولك الحق في الاسترجاع</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon">💳</div>
+                    <h3>سهولة الدفع</h3>
+                    <p>ادفع عند الاستلام بدون أي تكاليف إضافية</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon">📱</div>
+                    <h3>دعم فوري</h3>
+                    <p>تواصل معنا عبر واتس آب للإجابة على أسئلتك</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon">🎁</div>
+                    <h3>هدايا مجانية</h3>
+                    <p>احصل على هدايا مجانية مع كل عملية شراء</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon">🌟</div>
+                    <h3>أفضل سعر</h3>
+                    <p>أفضل سعر في السوق مع جودة مضمونة</p>
+                </div>
+                <div class="card glass">
+                    <div class="card-icon">✅</div>
+                    <h3>منتج أصلي</h3>
+                    <p>جميع منتجاتنا 100% أصلية ومصرح بها</p>
+                </div>
             </div>
-
-            <a href="#order" class="primary-btn">
-              اطلب الآن
-            </a>
-
-          </div>
-
         </div>
-
-      </div>
-
     </section>
 
-
-    <!-- ORDER -->
-
-    <section class="order-section" id="order">
-
-      <div class="order-wrap">
-
-        <div class="order-info">
-
-          <h2>
-            دير طلبك في أقل من دقيقة.
-          </h2>
-
-          <p>
-            عَمّر معلوماتك، ونواصلو معاك لتأكيد الطلب قبل الإرسال.
-          </p>
-
-          <div class="contact">
-            📞 07 92 90 05 76
-          </div>
-
-        </div>
-
-
-        <div class="form-card">
-
-          <h3>
-            معلومات الطلب
-          </h3>
-
-          <p>
-            جميع المعلومات تستعمل فقط لمعالجة طلبك.
-          </p>
-
-
-          <form id="orderForm">
-
-            <div class="form-grid">
-
-              <div class="field">
-
-                <label>
-                  الاسم واللقب
-                </label>
-
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="مثال: محمد أحمد"
-                  required
-                >
-
-              </div>
-
-
-              <div class="field">
-
-                <label>
-                  رقم الهاتف
-                </label>
-
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="07XXXXXXXX"
-                  required
-                >
-
-              </div>
-
-
-              <div class="field">
-
-                <label>
-                  الولاية
-                </label>
-
-                <input
-                  type="text"
-                  id="wilaya"
-                  placeholder="مثال: برج بوعريريج"
-                  required
-                >
-
-              </div>
-
-
-              <div class="field">
-
-                <label>
-                  البلدية
-                </label>
-
-                <input
-                  type="text"
-                  id="commune"
-                  placeholder="اسم البلدية"
-                  required
-                >
-
-              </div>
-
-
-              <div class="field">
-
-                <label>
-                  العنوان
-                </label>
-
-                <textarea
-                  id="address"
-                  placeholder="العنوان بالتفصيل"
-                  required
-                ></textarea>
-
-              </div>
-
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">مميزات إضافية</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>توصيل آمن</h4>
+                    <p>تغليف احترافي وآمن مع متتبع الطلب في الوقت الفعلي</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>استشارة مجانية</h4>
+                    <p>استشر خبراءنا قبل الشراء بدون أي التزام</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>سهولة الإرجاع</h4>
+                    <p>إمكانية الإرجاع خلال 30 يوم بدون شروط</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>جودة معايير دولية</h4>
+                    <p>جميع المنتجات تخضع لفحوصات جودة صارمة</p>
+                </div>
             </div>
-
-
-            <button
-              type="submit"
-              class="submit-btn"
-            >
-              تأكيد طلب الـPack — 4,800 دج
-            </button>
-
-
-            <p class="form-note">
-              الدفع عند الاستلام • سيتم التواصل معك لتأكيد الطلب
-            </p>
-
-          </form>
-
         </div>
-
-      </div>
-
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content glass" style="padding: 40px 30px; border-radius: 20px;">
+                <h2>جاهز للشراء؟</h2>
+                <p style="color: #aaa; margin: 15px 0;">لا تفوت هذه الفرصة الذهبية - عدد محدود من المخزون</p>
+                <a href="#order" class="btn btn-primary">اطلب الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="order" class="form-section">
+        <div class="container">
+            <h2 class="section-title">نموذج الطلب</h2>
+            <div class="form-container">
+                <div id="successMsg" class="success-message">✓ تم استلام طلبك بنجاح! جاري فتح واتس آب...</div>
+                <div id="errorMsg" class="error-message"></div>
+                
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">اسمك الكامل *</label>
+                        <input type="text" id="name" name="name" placeholder="أحمد محمد" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0612345678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">الولاية *</label>
+                        <select id="state" name="state" required>
+                            <option value="">اختر الولاية</option>
+                            <option value="الجزائر العاصمة">الجزائر العاصمة</option>
+                            <option value="وهران">وهران</option>
+                            <option value="قسنطينة">قسنطينة</option>
+                            <option value="الجلفة">الجلفة</option>
+                            <option value="المدية">المدية</option>
+                            <option value="البليدة">البليدة</option>
+                            <option value="بومرداس">بومرداس</option>
+                            <option value="برج بوعريريج">برج بوعريريج</option>
+                            <option value="تيزي وزو">تيزي وزو</option>
+                            <option value="قالمة">قالمة</option>
+                            <option value="قسنطينة">قسنطينة</option>
+                            <option value="أم البواقي">أم البواقي</option>
+                            <option value="باتنة">باتنة</option>
+                            <option value="خنشلة">خنشلة</option>
+                            <option value="سوق أهراس">سوق أهراس</option>
+                            <option value="تمنغست">تمنغست</option>
+                            <option value="بشار">بشار</option>
+                            <option value="الأغواط">الأغواط</option>
+                            <option value="سيدي بلعباس">سيدي بلعباس</option>
+                            <option value="عنابة">عنابة</option>
+                            <option value="غليزان">غليزان</option>
+                            <option value="تيارت">تيارت</option>
+                            <option value="تلمسان">تلمسان</option>
+                            <option value="جيجل">جيجل</option>
+                            <option value="سكيكدة">سكيكدة</option>
+                            <option value="دلس">دلس</option>
+                            <option value="البيض">الإيض</option>
+                            <option value="الطارف">الطارف</option>
+                            <option value="بسكرة">بسكرة</option>
+                            <option value="الوادي">الوادي</option>
+                            <option value="ورقلة">ورقلة</option>
+                            <option value="أدرار">أدرار</option>
+                            <option value="غردايا">غردايا</option>
+                            <option value="النعامة">النعامة</option>
+                            <option value="بوسعادة">بوسعادة</option>
+                            <option value="تسمسيلت">تسمسيلت</option>
+                            <option value="موستغانم">موستغانم</option>
+                            <option value="عين الدفلة">عين الدفلة</option>
+                            <option value="عين تموشنت">عين تموشنت</option>
+                            <option value="مستغانم">مستغانم</option>
+                            <option value="برج باجي مختار">برج باجي مختار</option>
+                            <option value="ميلة">ميلة</option>
+                            <option value="عرقة">عرقة</option>
+                            <option value="إليزي">إليزي</option>
+                            <option value="الراقيب">الراقيب</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">البلدية *</label>
+                        <input type="text" id="city" name="city" placeholder="مثال: الجزائر وسط" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">العنوان التفصيلي *</label>
+                        <input type="text" id="address" name="address" placeholder="رقم الشارع، اسم الحي" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">تأكيد الطلب</button>
+                </form>
+
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 15px; color: var(--accent);">جاري معالجة طلبك...</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FAQ -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">الأسئلة الشائعة</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>كم تكون تكاليف التوصيل؟</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    التوصيل مجاني تماماً في جميع ولايات الجزائر. لا توجد أي تكاليف إضافية.
+                </div>
+            </div>
 
-    <section>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>ما هي طرق الدفع المتاحة؟</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    نتقبل الدفع عند الاستلام فقط. يمكنك دفع المبلغ للعامل عند استقبال الطلب.
+                </div>
+            </div>
 
-      <div class="container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>كم مدة التوصيل؟</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    التوصيل يتم خلال 24-48 ساعة في معظم الولايات. قد يستغرق وقتاً أطول قليلاً في المناطق البعيدة.
+                </div>
+            </div>
 
-        <div class="section-head">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>هل المنتج مضمون؟</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    نعم، جميع المنتجات مضمونة مدى الحياة. لك الحق في استرجاع المنتج خلال 30 يوم إذا لم تكن راضياً.
+                </div>
+            </div>
 
-          <div class="section-label">
-            FAQ
-          </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>هل يمكن تتبع الطلب؟</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    نعم، بعد تأكيد الطلب ستتلقى رقم تتبع يمكنك من خلاله متابعة الطلب في الوقت الفعلي.
+                </div>
+            </div>
 
-          <h2 class="section-title">
-            أسئلة متكررة
-          </h2>
-
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>هل المنتج أصلي؟</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    100% أصلي ومصرح به. جميع المنتجات تأتي بشهادة الأصلية والضمان الرسمي.
+                </div>
+            </div>
         </div>
-
-
-        <div class="faq">
-
-          <details>
-
-            <summary>
-              هل الدفع عند الاستلام؟
-            </summary>
-
-            <p>
-              نعم، الدفع يكون عند استلام الطلب.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              كيفاش نطلب الـPack؟
-            </summary>
-
-            <p>
-              عَمّر معلوماتك في فورم الطلب، وبعدها يتم التواصل معك لتأكيد الطلب.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              كم سعر الـPack؟
-            </summary>
-
-            <p>
-              سعر الـPack هو 4,800 دج.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              كيفاش نتواصل مع YUBIX STORE؟
-            </summary>
-
-            <p>
-              تقدر تتواصل معنا عبر الرقم 07 92 90 05 76.
-            </p>
-
-          </details>
-
-        </div>
-
-      </div>
-
     </section>
 
-  </main>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 YUBIX STORE - جميع الحقوق محفوظة</p>
+            <p>تواصل معنا: <strong style="color: var(--primary);">WhatsApp</strong> - 0792900576</p>
+            <p style="margin-top: 20px; font-size: 0.9rem;">Made with ❤ for you</p>
+        </div>
+    </footer>
 
+    <script>
+        // Store Configuration
+        const STORE_CONFIG = {
+            storeName: 'YUBIX STORE',
+            productName: 'Pack 7 en 1',
+            price: 4800,
+            whatsappNumber: '213792900576', // Include country code
+            logoImage: 'logo.png',
+            productImage: 'pack.jpg'
+        };
 
-  <!-- FOOTER -->
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
 
-  <footer>
+        // Smooth scroll animations
+        window.addEventListener('load', () => {
+            // Fade in hero content
+            gsap.from('.hero-content h1', {
+                duration: 1,
+                opacity: 0,
+                y: 30,
+                ease: 'power2.out'
+            });
 
-    <strong>
-      YUBIX STORE
-    </strong>
+            gsap.from('.hero-content p', {
+                duration: 1,
+                opacity: 0,
+                y: 30,
+                delay: 0.2,
+                ease: 'power2.out'
+            });
 
-    <p>
-      إكسسوارات ومنتجات تقنية • Pack 7 en 1
-    </p>
+            gsap.from('.hero-content .btn', {
+                duration: 1,
+                opacity: 0,
+                y: 30,
+                delay: 0.4,
+                ease: 'power2.out'
+            });
 
-    <p>
-      © 2026 YUBIX STORE. جميع الحقوق محفوظة.
-    </p>
+            // Animate cards on scroll
+            gsap.utils.toArray('.card').forEach((card, index) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
+                    },
+                    duration: 0.6,
+                    opacity: 0,
+                    y: 30,
+                    delay: index * 0.1,
+                    ease: 'power2.out'
+                });
+            });
 
-  </footer>
+            // Animate benefit items
+            gsap.utils.toArray('.benefit-item').forEach((item, index) => {
+                gsap.from(item, {
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    },
+                    duration: 0.6,
+                    opacity: 0,
+                    x: index % 2 === 0 ? -30 : 30,
+                    ease: 'power2.out'
+                });
+            });
 
+            // Animate product section
+            gsap.from('.product-info', {
+                scrollTrigger: {
+                    trigger: '.product-hero',
+                    start: 'top 70%',
+                    toggleActions: 'play none none none'
+                },
+                duration: 0.8,
+                opacity: 0,
+                x: -50,
+                ease: 'power2.out'
+            });
 
-  <!-- TOAST -->
+            gsap.from('.product-image', {
+                scrollTrigger: {
+                    trigger: '.product-hero',
+                    start: 'top 70%',
+                    toggleActions: 'play none none none'
+                },
+                duration: 0.8,
+                opacity: 0,
+                x: 50,
+                ease: 'power2.out'
+            });
 
-  <div
-    class="toast"
-    id="toast">
-  </div>
+            // Parallax effect on product image
+            gsap.to('.product-image img', {
+                scrollTrigger: {
+                    trigger: '.product-hero',
+                    start: 'top 50%',
+                    end: 'bottom 50%',
+                    scrub: 0.5
+                },
+                y: -50,
+                ease: 'none'
+            });
+        });
 
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+                
+                // Animate answer
+                gsap.to(item.querySelector('.faq-answer'), {
+                    duration: 0.3,
+                    opacity: item.classList.contains('active') ? 1 : 0
+                });
+            });
+        });
 
-  <script>
+        // Form Submission
+        const orderForm = document.getElementById('orderForm');
+        const loadingDiv = document.getElementById('loading');
+        const successMsg = document.getElementById('successMsg');
+        const errorMsg = document.getElementById('errorMsg');
 
-    const form = document.getElementById("orderForm");
-    const toast = document.getElementById("toast");
+        orderForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const state = document.getElementById('state').value.trim();
+            const city = document.getElementById('city').value.trim();
+            const address = document.getElementById('address').value.trim();
 
-    function showToast(message){
+            // Validation
+            if (!name || !phone || !state || !city || !address) {
+                showError('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
 
-      toast.textContent = message;
+            if (!/^\d{10}$/.test(phone.replace(/\D/g, ''))) {
+                showError('رقم الهاتف غير صحيح');
+                return;
+            }
 
-      toast.classList.add("show");
+            // Show loading
+            loadingDiv.style.display = 'block';
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
 
-      setTimeout(() => {
+            // Simulate processing
+            await new Promise(resolve => setTimeout(resolve, 1500));
 
-        toast.classList.remove("show");
+            // Hide loading
+            loadingDiv.style.display = 'none';
 
-      }, 3500);
+            // Show success message
+            successMsg.style.display = 'block';
 
-    }
+            // Prepare WhatsApp message
+            const message = `مرحباً، أود طلب المنتج:\n\n📦 *${STORE_CONFIG.productName}*\n💰 السعر: ${STORE_CONFIG.price} دج\n\n👤 البيانات الشخصية:\nالاسم: ${name}\nالهاتف: ${phone}\nالولاية: ${state}\nالبلدية: ${city}\nالعنوان: ${address}\n\nشكراً لك! ✨`;
 
+            // Open WhatsApp after short delay
+            setTimeout(() => {
+                const whatsappUrl = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
 
-    form.addEventListener("submit", function(e){
+                // Reset form
+                orderForm.reset();
+                successMsg.style.display = 'none';
+            }, 1000);
+        });
 
-      e.preventDefault();
+        function showError(message) {
+            errorMsg.textContent = '⚠ ' + message;
+            errorMsg.style.display = 'block';
+            
+            setTimeout(() => {
+                errorMsg.style.display = 'none';
+            }, 4000);
+        }
 
+        // Add micro-interactions to buttons
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                gsap.to(this, {
+                    duration: 0.3,
+                    scale: 1.05,
+                    ease: 'power2.out'
+                });
+            });
 
-      const name =
-        document.getElementById("name").value.trim();
+            btn.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    duration: 0.3,
+                    scale: 1,
+                    ease: 'power2.out'
+                });
+            });
+        });
 
-      const phone =
-        document.getElementById("phone").value.trim();
+        // Add hover effect to cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                gsap.to(this, {
+                    duration: 0.4,
+                    boxShadow: '0 20px 50px rgba(76, 157, 176, 0.3)',
+                    ease: 'power2.out'
+                });
+            });
 
-      const wilaya =
-        document.getElementById("wilaya").value.trim();
+            card.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    duration: 0.4,
+                    boxShadow: 'none',
+                    ease: 'power2.out'
+                });
+            });
+        });
 
-      const commune =
-        document.getElementById("commune").value.trim();
+        // Scroll to smooth
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    gsap.to(window, {
+                        duration: 0.8,
+                        scrollTo: {
+                            y: target,
+                            offsetY: 80
+                        },
+                        ease: 'power2.inOut'
+                    });
+                }
+            });
+        });
 
-      const address =
-        document.getElementById("address").value.trim();
+        // Add stagger animation to product features
+        gsap.from('.product-features li', {
+            scrollTrigger: {
+                trigger: '.product-features',
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            },
+            duration: 0.5,
+            opacity: 0,
+            x: -30,
+            stagger: 0.1,
+            ease: 'power2.out'
+        });
 
+        // Form input focus animations
+        const inputs = document.querySelectorAll('.form-group input, .form-group select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                gsap.to(this, {
+                    duration: 0.3,
+                    scale: 1.02,
+                    ease: 'power2.out'
+                });
+            });
 
-      if(
-        !name ||
-        !phone ||
-        !wilaya ||
-        !commune ||
-        !address
-      ){
-
-        showToast("من فضلك عَمّر جميع المعلومات.");
-
-        return;
-
-      }
-
-
-      const message =
-`🛍️ طلب جديد — YUBIX STORE
-
-📦 المنتج: Pack 7 en 1
-💰 السعر: 4,800 دج
-
-👤 الاسم: ${name}
-📞 الهاتف: ${phone}
-📍 الولاية: ${wilaya}
-🏘️ البلدية: ${commune}
-🏠 العنوان: ${address}
-
-💳 الدفع: عند الاستلام`;
-
-
-      const whatsappNumber =
-        "213792900576";
-
-
-      const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-      window.open(
-        whatsappURL,
-        "_blank"
-      );
-
-
-      showToast(
-        "تم تجهيز طلبك، سيتم فتح WhatsApp."
-      );
-
-    });
-
-  </script>
-
+            input.addEventListener('blur', function() {
+                gsap.to(this, {
+                    duration: 0.3,
+                    scale: 1,
+                    ease: 'power2.out'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-```
