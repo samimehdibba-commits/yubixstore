@@ -1,2637 +1,1298 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050a0d">
+<title>YUBIX STORE | المتجر الإلكتروني</title>
 
-<title>YUBIX STORE — Pack 7 en 1</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-:root{
-  --blue:#4c9db0;
-  --blue2:#28798d;
-  --cyan:#83d9e8;
-  --cream:#ffebaf;
-  --dark:#050a0d;
-  --dark2:#0a1419;
-  --white:#fff;
-  --muted:#91a4aa;
-  --glass:rgba(255,255,255,.065);
-  --line:rgba(255,255,255,.1);
+:root {
+  --blue: #4c9db0;
+  --cyan: #83d9e8;
+  --dark: #050a0d;
+  --panel: #0b171c;
+  --muted: #91a4aa;
+  --line: #ffffff17;
+  --white: #ffffff;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
-body{
-  background:#020608;
-  color:#fff;
-  font-family:"Alexandria",sans-serif;
-  overflow-x:hidden;
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: "Alexandria", sans-serif;
+  overflow-x: hidden;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
+button, input, select {
+  font: inherit;
 }
 
-button,
-input,
-textarea{
-  font-family:inherit;
+button, a {
+  cursor: pointer;
 }
 
-/* =========================================
-   APP
-========================================= */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-.app{
-  width:100%;
-  max-width:480px;
-  min-height:100vh;
-  margin:auto;
-  position:relative;
-  overflow:hidden;
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: auto;
+}
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #050a0deF;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.logo {
+  font: 800 21px Orbitron, sans-serif;
+  direction: ltr;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--cyan);
+}
+
+.nav-links {
+  display: flex;
+  gap: 23px;
+  font-size: 12px;
+  color: #c5d2d6;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: #061014;
+  border-color: transparent;
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+}
+
+.cart-button {
+  background: var(--panel);
+  color: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.tag {
+  display: inline-block;
+  color: var(--cyan);
+  border: 1px solid #83d9e833;
+  background: #4c9db014;
+  border-radius: 30px;
+  padding: 9px 13px;
+  font-size: 10px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 5vw, 60px);
+  line-height: 1.4;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: var(--cyan);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2.2;
+  margin: 17px 0 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-art {
+  min-height: 310px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.hero-card {
+  width: min(320px, 90%);
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  border-radius: 35px;
+  border: 1px solid #83d9e83d;
   background:
-    radial-gradient(
-      circle at 20% 10%,
-      rgba(76,157,176,.13),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 40%,
-      rgba(76,157,176,.08),
-      transparent 25%
-    ),
-    var(--dark);
+    radial-gradient(circle, #4c9db02c, transparent 65%),
+    linear-gradient(145deg, #ffffff12, #ffffff03);
+  box-shadow: 0 20px 90px #4c9db018;
+  transform: rotate(-3deg);
 }
 
-/* =========================================
-   BACKGROUND
-========================================= */
-
-.bg{
-  position:fixed;
-  inset:0;
-  max-width:480px;
-  margin:auto;
-  overflow:hidden;
-  pointer-events:none;
-  z-index:0;
+.hero-card strong {
+  font: 800 42px Orbitron, sans-serif;
 }
 
-.blob{
-  position:absolute;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  filter:blur(65px);
-  opacity:.28;
+.hero-card strong span {
+  color: var(--cyan);
 }
 
-.b1{
-  background:#267d91;
-  top:8%;
-  right:-90px;
+.hero-card small {
+  margin-top: 15px;
+  font: 10px Orbitron, sans-serif;
+  letter-spacing: 2px;
+  color: var(--muted);
 }
 
-.b2{
-  background:#49aabd;
-  top:48%;
-  left:-100px;
+.floating {
+  position: absolute;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 10px;
 }
 
-.b3{
-  background:#164d5a;
-  bottom:8%;
-  right:20%;
+.float-one {
+  top: 15%;
+  right: 0;
 }
 
-.grid{
-  position:absolute;
-  inset:0;
-  opacity:.16;
-
-  background-image:
-    linear-gradient(
-      rgba(255,255,255,.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.035) 1px,
-      transparent 1px
-    );
-
-  background-size:35px 35px;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black,
-      transparent 90%
-    );
+.float-two {
+  bottom: 12%;
+  left: 0;
 }
 
-/* =========================================
-   HEADER
-========================================= */
-
-header{
-  position:fixed;
-  top:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(calc(100% - 18px),460px);
-  z-index:100;
-  padding-top:9px;
+section {
+  padding: 55px 0;
 }
 
-.nav{
-  height:59px;
-  padding:8px 10px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:18px;
-
-  background:rgba(5,10,13,.7);
-  backdrop-filter:blur(20px);
-
-  box-shadow:
-    0 12px 35px rgba(0,0,0,.25);
+.section-heading {
+  margin-bottom: 25px;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:8px;
+.section-heading small {
+  color: var(--cyan);
+  font: 10px Orbitron, sans-serif;
+  letter-spacing: 2px;
 }
 
-.logo-image{
-  width:110px;
-  height:40px;
-  object-fit:contain;
-  display:block;
+.section-heading h2 {
+  font-size: clamp(24px, 4vw, 35px);
+  margin-top: 10px;
 }
 
-.nav-btn{
-  padding:9px 13px;
-  border-radius:11px;
-
-  background:#fff;
-  color:#061014;
-
-  font-size:10px;
-  font-weight:800;
-
-  transition:.25s;
+.section-heading p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 2;
+  margin-top: 8px;
 }
 
-.nav-btn:active{
-  transform:scale(.94);
+.categories {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 15px;
 }
 
-/* =========================================
-   MAIN
-========================================= */
-
-main,
-.footer-content{
-  position:relative;
-  z-index:2;
+.category {
+  white-space: nowrap;
+  background: var(--panel);
+  color: #c5d2d6;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-size: 10px;
 }
 
-section{
-  padding:75px 17px;
+.category.active,
+.category:hover {
+  background: var(--cyan);
+  color: #061014;
 }
 
-/* =========================================
-   HERO
-========================================= */
-
-.hero{
-  min-height:100svh;
-  padding-top:110px;
-
-  display:flex;
-  align-items:center;
+.tools {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
 }
 
-.hero-inner{
-  width:100%;
-  text-align:center;
+.tools input,
+.tools select {
+  min-width: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: white;
+  border-radius: 12px;
+  padding: 13px;
+  outline: none;
+  font-size: 11px;
 }
 
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-
-  padding:7px 12px;
-
-  border:1px solid rgba(131,217,232,.2);
-  background:rgba(76,157,176,.08);
-  border-radius:100px;
-
-  color:var(--cyan);
-
-  font-size:9px;
-  font-weight:700;
-
-  margin-bottom:19px;
+.tools input {
+  flex: 1;
 }
 
-.dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#54e09b;
-
-  box-shadow:
-    0 0 12px #54e09b;
+.tools select {
+  width: 180px;
 }
 
-h1{
-  font-size:43px;
-  line-height:1.08;
-  letter-spacing:-2px;
-  font-weight:800;
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
 }
 
-h1 span{
-  color:var(--blue);
+.product {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #ffffff0b, #ffffff02);
+  transition: .25s;
 }
 
-.hero-desc{
-  color:var(--muted);
-  font-size:11px;
-  line-height:2;
-
-  margin:17px auto;
-  max-width:360px;
+.product:hover {
+  transform: translateY(-5px);
+  border-color: #83d9e866;
 }
 
-.price{
-  font-family:"Orbitron";
-  font-size:29px;
-  font-weight:800;
-
-  margin:15px 0 20px;
+.product-image {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: radial-gradient(circle, #4c9db020, #ffffff03 70%);
+  overflow: hidden;
 }
 
-.price small{
-  font-family:"Alexandria";
-  font-size:11px;
-  color:var(--muted);
+.product-image img {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  object-fit: contain;
 }
 
-.actions{
-  display:flex;
-  flex-direction:column;
-  gap:9px;
+.product-emoji {
+  font-size: 58px;
 }
 
-.btn{
-  min-height:51px;
-
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.1);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-size:11px;
-  font-weight:800;
-
-  transition:.25s;
-  cursor:pointer;
+.product-info {
+  padding: 14px;
 }
 
-.btn-primary{
-  color:#061014;
-  background:#fff;
-
-  box-shadow:
-    0 12px 30px rgba(255,255,255,.08);
+.product-category {
+  color: var(--cyan);
+  font-size: 9px;
+  margin-bottom: 8px;
 }
 
-.btn-secondary{
-  color:#fff;
-  background:rgba(255,255,255,.045);
+.product-info h3 {
+  font-size: 12px;
+  line-height: 1.8;
+  min-height: 42px;
 }
 
-.btn:active{
-  transform:scale(.96);
+.product-info p {
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.8;
+  min-height: 32px;
+  margin-top: 5px;
 }
 
-/* =========================================
-   PRODUCT STAGE
-========================================= */
-
-.product-stage{
-  position:relative;
-
-  width:100%;
-  height:350px;
-
-  margin-top:25px;
-
-  display:grid;
-  place-items:center;
-
-  perspective:1000px;
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  margin-top: 15px;
 }
 
-.product-glow{
-  position:absolute;
-
-  width:230px;
-  height:230px;
-
-  border-radius:50%;
-
-  background:
-    rgba(76,157,176,.3);
-
-  filter:blur(65px);
-
-  animation:
-    mainGlow 4s ease-in-out infinite;
+.price {
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
-@keyframes mainGlow{
+.add-button {
+  border: 0;
+  border-radius: 9px;
+  background: white;
+  color: #061014;
+  padding: 10px;
+  font-size: 9px;
+  font-weight: 800;
+}
 
-  0%,100%{
-    transform:scale(.9);
-    opacity:.55;
+.empty {
+  display: none;
+  text-align: center;
+  padding: 35px;
+  color: var(--muted);
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.benefit {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: var(--panel);
+}
+
+.benefit strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.benefit p {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 2;
+}
+
+.banner {
+  padding: 30px;
+  border: 1px solid #83d9e833;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #12343d, #0a1419);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.banner h2 {
+  font-size: 22px;
+}
+
+.banner p {
+  color: #c5d2d6;
+  font-size: 10px;
+  line-height: 2;
+  margin-top: 8px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 2;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.drawer-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000b;
+  z-index: 29;
+}
+
+.drawer {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: min(410px, 100%);
+  background: #081217;
+  border-right: 1px solid var(--line);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-105%);
+  transition: .25s;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-bg.open {
+  display: block;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.close {
+  background: transparent;
+  color: white;
+  border: 0;
+  font-size: 28px;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-item h4 {
+  font-size: 11px;
+}
+
+.cart-item p {
+  color: var(--cyan);
+  font-size: 10px;
+  margin: 7px 0;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.quantity button {
+  width: 27px;
+  height: 27px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: white;
+  border-radius: 8px;
+}
+
+.remove {
+  background: transparent;
+  color: #ff8c8c;
+  border: 0;
+  font-size: 19px;
+}
+
+.cart-footer {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.cart-footer p {
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.cart-footer .btn {
+  width: 100%;
+}
+
+.modal-bg {
+  display: none;
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  background: #000c;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-bg.open {
+  display: flex;
+}
+
+.modal {
+  width: min(500px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  background: #0a151a;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal h2 {
+  font-size: 19px;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  background: #02080b;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 13px;
+  margin-bottom: 11px;
+  color: white;
+  outline: none;
+  font-size: 11px;
+}
+
+.modal textarea {
+  min-height: 75px;
+  resize: vertical;
+}
+
+.modal .btn {
+  width: 100%;
+}
+
+.notice {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 2;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 900px) {
+  .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  50%{
-    transform:scale(1.12);
-    opacity:.9;
+  .nav-links {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .nav-links {
+    display: none;
   }
 
-}
-
-/* =========================================
-   PRODUCT CARD
-========================================= */
-
-.product{
-  width:88%;
-  max-width:360px;
-
-  aspect-ratio:1/1;
-
-  border-radius:30px;
-
-  border:1px solid rgba(255,255,255,.11);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.11),
-      rgba(255,255,255,.025)
-    );
-
-  backdrop-filter:blur(12px);
-
-  display:grid;
-  place-items:center;
-
-  position:relative;
-  overflow:hidden;
-
-  box-shadow:
-    0 30px 70px rgba(0,0,0,.35);
-
-  transform-style:preserve-3d;
-  will-change:transform;
-}
-
-.product::before{
-  content:"";
-
-  position:absolute;
-  inset:-50%;
-
-  background:
-    conic-gradient(
-      transparent,
-      rgba(131,217,232,.12),
-      transparent 30%
-    );
-
-  animation:
-    spin 8s linear infinite;
-
-  z-index:1;
-}
-
-@keyframes spin{
-
-  to{
-    transform:rotate(360deg);
+  .logo {
+    font-size: 16px;
   }
 
-}
-
-/* =========================================
-   ANIMATION SLOT
-   هنا مكان الأنيميشن الرئيسي
-========================================= */
-
-.animation-slot{
-  position:absolute;
-  inset:0;
-
-  z-index:3;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  pointer-events:none;
-
-  perspective:1000px;
-}
-
-.yubix-animation{
-  position:relative;
-
-  width:82%;
-  max-width:300px;
-
-  aspect-ratio:1/1;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  transform-style:preserve-3d;
-
-  will-change:transform,opacity;
-
-  opacity:.85;
-}
-
-/* =========================================
-   ANIMATION GLOW
-========================================= */
-
-.yubix-glow{
-  position:absolute;
-
-  width:75%;
-  height:75%;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(131,217,232,.42) 0%,
-      rgba(76,157,176,.22) 35%,
-      transparent 70%
-    );
-
-  filter:blur(25px);
-
-  opacity:.65;
-
-  transform:translateZ(-50px);
-
-  animation:
-    yubixGlow 3s ease-in-out infinite;
-}
-
-/* =========================================
-   ORBIT RING
-========================================= */
-
-.yubix-ring{
-  position:absolute;
-
-  width:90%;
-  height:35%;
-
-  border:
-    1px solid
-    rgba(131,217,232,.30);
-
-  border-radius:50%;
-
-  transform:
-    rotateX(68deg)
-    translateZ(5px);
-
-  box-shadow:
-    0 0 20px rgba(131,217,232,.12);
-
-  animation:
-    yubixOrbit 5s linear infinite;
-}
-
-.yubix-ring-2{
-  position:absolute;
-
-  width:72%;
-  height:28%;
-
-  border:
-    1px solid
-    rgba(76,157,176,.25);
-
-  border-radius:50%;
-
-  transform:
-    rotateX(68deg)
-    rotateZ(55deg);
-
-  animation:
-    yubixOrbitReverse 7s linear infinite;
-}
-
-/* =========================================
-   CORE
-========================================= */
-
-.yubix-core{
-  position:relative;
-
-  width:145px;
-  height:145px;
-
-  border-radius:32px;
-
-  display:flex;
-  flex-direction:column;
-
-  align-items:center;
-  justify-content:center;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.15),
-      rgba(255,255,255,.035)
-    );
-
-  border:
-    1px solid
-    rgba(255,255,255,.16);
-
-  backdrop-filter:blur(15px);
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,.4),
-
-    inset 0 1px 0
-    rgba(255,255,255,.1);
-
-  transform-style:preserve-3d;
-
-  overflow:hidden;
-}
-
-/* LIGHT SWEEP */
-
-.yubix-core::before{
-  content:"";
-
-  position:absolute;
-
-  width:200%;
-  height:40%;
-
-  left:-50%;
-  top:30%;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(131,217,232,.2),
-      transparent
-    );
-
-  transform:rotate(-25deg);
-
-  animation:
-    yubixSweep 3.5s ease-in-out infinite;
-}
-
-/* SHINE */
-
-.yubix-core::after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    radial-gradient(
-      circle at 30% 20%,
-      rgba(255,255,255,.15),
-      transparent 35%
-    );
-
-  pointer-events:none;
-}
-
-/* =========================================
-   YUBIX TEXT
-========================================= */
-
-.yubix-core-title{
-  position:relative;
-  z-index:2;
-
-  font-family:"Orbitron",sans-serif;
-
-  font-size:22px;
-  font-weight:800;
-
-  letter-spacing:1px;
-
-  color:#fff;
-
-  text-shadow:
-    0 0 18px
-    rgba(131,217,232,.4);
-}
-
-.yubix-core-sub{
-  position:relative;
-  z-index:2;
-
-  margin-top:5px;
-
-  font-size:7px;
-
-  letter-spacing:1px;
-
-  color:rgba(255,255,255,.55);
-}
-
-/* =========================================
-   PARTICLES
-========================================= */
-
-.yubix-particle{
-  position:absolute;
-
-  width:5px;
-  height:5px;
-
-  border-radius:50%;
-
-  background:#83d9e8;
-
-  box-shadow:
-    0 0 12px #83d9e8;
-
-  opacity:.7;
-}
-
-.p1{
-  top:13%;
-  left:20%;
-}
-
-.p2{
-  top:22%;
-  right:15%;
-}
-
-.p3{
-  bottom:18%;
-  left:13%;
-}
-
-.p4{
-  bottom:10%;
-  right:22%;
-}
-
-.p5{
-  top:48%;
-  left:5%;
-}
-
-.p6{
-  top:43%;
-  right:5%;
-}
-
-/* =========================================
-   KEYFRAMES
-========================================= */
-
-@keyframes yubixGlow{
-
-  0%,100%{
-    transform:
-      translateZ(-50px)
-      scale(.9);
-
-    opacity:.5;
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 40px;
   }
 
-  50%{
-    transform:
-      translateZ(-50px)
-      scale(1.08);
-
-    opacity:.85;
+  .hero-buttons {
+    justify-content: center;
   }
 
-}
-
-@keyframes yubixOrbit{
-
-  from{
-    transform:
-      rotateX(68deg)
-      rotateZ(0deg);
+  .hero-art {
+    min-height: 270px;
   }
 
-  to{
-    transform:
-      rotateX(68deg)
-      rotateZ(360deg);
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
-}
-
-@keyframes yubixOrbitReverse{
-
-  from{
-    transform:
-      rotateX(68deg)
-      rotateZ(360deg);
+  .product-info {
+    padding: 10px;
   }
 
-  to{
-    transform:
-      rotateX(68deg)
-      rotateZ(0deg);
+  .product-info h3 {
+    font-size: 11px;
   }
 
-}
-
-@keyframes yubixSweep{
-
-  0%{
-    transform:
-      translateX(-80%)
-      rotate(-25deg);
+  .product-bottom {
+    flex-wrap: wrap;
   }
 
-  50%{
-    transform:
-      translateX(80%)
-      rotate(-25deg);
+  .tools select {
+    width: 125px;
+    font-size: 9px;
   }
 
-  100%{
-    transform:
-      translateX(80%)
-      rotate(-25deg);
+  .benefits {
+    grid-template-columns: 1fr;
   }
 
-}
-
-/* =========================================
-   PACK IMAGE
-========================================= */
-
-.product > img{
-  position:relative;
-
-  z-index:4;
-
-  width:82%;
-  height:82%;
-
-  object-fit:contain;
-
-  filter:
-    drop-shadow(
-      0 25px 25px rgba(0,0,0,.4)
-    );
-
-  transition:.5s;
-
-  will-change:transform;
-}
-
-/* =========================================
-   FALLBACK
-========================================= */
-
-.pack-fallback{
-  position:absolute;
-
-  z-index:4;
-
-  text-align:center;
-
-  color:#fff;
-}
-
-.pack-fallback b{
-  display:block;
-
-  font-family:"Orbitron";
-
-  font-size:24px;
-}
-
-.pack-fallback span{
-  color:var(--muted);
-
-  font-size:9px;
-}
-
-/* =========================================
-   TAGS
-========================================= */
-
-.tag{
-  position:absolute;
-
-  z-index:6;
-
-  padding:8px 10px;
-
-  border-radius:10px;
-
-  background:
-    rgba(5,10,13,.8);
-
-  border:
-    1px solid
-    rgba(255,255,255,.1);
-
-  backdrop-filter:blur(10px);
-
-  font-size:8px;
-  font-weight:700;
-}
-
-.t1{
-  top:20px;
-  right:10px;
-}
-
-.t2{
-  bottom:20px;
-  left:10px;
-}
-
-/* =========================================
-   TITLES
-========================================= */
-
-.label{
-  color:var(--cyan);
-
-  font-family:"Orbitron";
-
-  font-size:9px;
-
-  letter-spacing:1px;
-
-  margin-bottom:10px;
-}
-
-.title{
-  font-size:27px;
-
-  line-height:1.3;
-
-  font-weight:800;
-
-  letter-spacing:-1px;
-}
-
-.desc{
-  color:var(--muted);
-
-  font-size:10px;
-
-  line-height:1.9;
-
-  margin-top:10px;
-}
-
-/* =========================================
-   PRODUCTS
-========================================= */
-
-.product-grid{
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:9px;
-
-  margin-top:27px;
-}
-
-.card{
-  padding:18px 10px;
-
-  border:
-    1px solid
-    var(--line);
-
-  border-radius:18px;
-
-  background:
-    rgba(255,255,255,.045);
-
-  backdrop-filter:blur(12px);
-
-  transition:.35s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-
-  border-color:
-    rgba(131,217,232,.3);
-}
-
-.icon{
-  width:45px;
-  height:45px;
-
-  border-radius:13px;
-
-  display:grid;
-  place-items:center;
-
-  background:
-    rgba(76,157,176,.12);
-
-  font-size:19px;
-
-  margin-bottom:11px;
-}
-
-.card h3{
-  font-size:11px;
-  margin-bottom:5px;
-}
-
-.card p{
-  color:var(--muted);
-
-  font-size:8px;
-
-  line-height:1.7;
-}
-
-/* =========================================
-   FEATURES
-========================================= */
-
-.feature-section{
-  background:
-    rgba(255,255,255,.018);
-
-  border-top:
-    1px solid rgba(255,255,255,.05);
-
-  border-bottom:
-    1px solid rgba(255,255,255,.05);
-}
-
-.features{
-  display:flex;
-  flex-direction:column;
-
-  gap:10px;
-
-  margin-top:25px;
-}
-
-.feature{
-  display:flex;
-
-  gap:13px;
-
-  align-items:flex-start;
-
-  padding:17px;
-
-  border:
-    1px solid
-    var(--line);
-
-  border-radius:18px;
-
-  background:
-    rgba(255,255,255,.035);
-}
-
-.feature-icon{
-  min-width:40px;
-
-  height:40px;
-
-  border-radius:12px;
-
-  display:grid;
-  place-items:center;
-
-  background:var(--blue);
-
-  color:#051014;
-}
-
-.feature h3{
-  font-size:12px;
-  margin-bottom:4px;
-}
-
-.feature p{
-  color:var(--muted);
-
-  font-size:9px;
-
-  line-height:1.7;
-}
-
-/* =========================================
-   OFFER
-========================================= */
-
-.offer{
-  padding:28px 19px;
-
-  border-radius:25px;
-
-  background:
-
-    radial-gradient(
-      circle at 90% 0%,
-      rgba(255,235,175,.25),
-      transparent 30%
-    ),
-
-    linear-gradient(
-      135deg,
-      var(--blue2),
-      #123c48
-    );
-
-  border:
-    1px solid
-    rgba(131,217,232,.15);
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,.25);
-
-  text-align:center;
-}
-
-.offer h2{
-  font-size:24px;
-  margin-bottom:8px;
-}
-
-.offer p{
-  color:
-    rgba(255,255,255,.72);
-
-  font-size:9px;
-
-  line-height:1.8;
-
-  margin-bottom:18px;
-}
-
-/* =========================================
-   ORDER
-========================================= */
-
-.order-card{
-  margin-top:25px;
-
-  padding:20px;
-
-  border-radius:23px;
-
-  border:
-    1px solid
-    var(--line);
-
-  background:
-    rgba(255,255,255,.045);
-
-  backdrop-filter:blur(15px);
-}
-
-.field{
-  margin-bottom:11px;
-}
-
-.field label{
-  display:block;
-
-  font-size:9px;
-  font-weight:700;
-
-  margin-bottom:6px;
-
-  color:#c5d2d6;
-}
-
-.field input,
-.field textarea{
-  width:100%;
-
-  border:
-    1px solid
-    rgba(255,255,255,.09);
-
-  border-radius:12px;
-
-  background:
-    rgba(0,0,0,.2);
-
-  color:#fff;
-
-  outline:none;
-
-  padding:12px;
-
-  font-size:10px;
-}
-
-.field textarea{
-  min-height:70px;
-  resize:none;
-}
-
-.field input:focus,
-.field textarea:focus{
-  border-color:
-    var(--blue);
-
-  box-shadow:
-    0 0 0 3px
-    rgba(76,157,176,.1);
-}
-
-.submit{
-  width:100%;
-
-  border:0;
-
-  min-height:52px;
-
-  border-radius:13px;
-
-  background:var(--blue);
-
-  color:#061014;
-
-  font-size:11px;
-
-  font-weight:900;
-
-  cursor:pointer;
-
-  margin-top:5px;
-
-  transition:.25s;
-}
-
-.submit:active{
-  transform:scale(.97);
-}
-
-/* =========================================
-   FAQ
-========================================= */
-
-.faq{
-  display:flex;
-
-  flex-direction:column;
-
-  gap:8px;
-
-  margin-top:25px;
-}
-
-details{
-  padding:15px;
-
-  border-radius:14px;
-
-  background:
-    rgba(255,255,255,.04);
-
-  border:
-    1px solid
-    var(--line);
-}
-
-summary{
-  font-size:10px;
-
-  font-weight:700;
-
-  cursor:pointer;
-}
-
-details p{
-  color:var(--muted);
-
-  font-size:9px;
-
-  line-height:1.8;
-
-  padding-top:9px;
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer{
-  padding:35px 17px;
-
-  border-top:
-    1px solid
-    var(--line);
-
-  text-align:center;
-}
-
-.footer-logo{
-  font-family:"Orbitron";
-
-  font-size:17px;
-
-  font-weight:800;
-
-  letter-spacing:1px;
-}
-
-.footer-logo span{
-  color:var(--blue);
-}
-
-footer p{
-  color:var(--muted);
-
-  font-size:8px;
-
-  line-height:1.8;
-
-  margin-top:7px;
-}
-
-/* =========================================
-   TOAST
-========================================= */
-
-.toast{
-  position:fixed;
-
-  z-index:999;
-
-  bottom:15px;
-
-  left:50%;
-
-  transform:
-    translate(-50%,120px);
-
-  width:
-    calc(100% - 30px);
-
-  max-width:450px;
-
-  padding:13px;
-
-  border-radius:13px;
-
-  background:#fff;
-
-  color:#061014;
-
-  text-align:center;
-
-  font-size:10px;
-
-  font-weight:800;
-
-  transition:.35s;
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.3);
-}
-
-.toast.show{
-  transform:
-    translate(-50%,0);
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:600px){
-
-  .animation-slot{
-    inset:5px;
+  .banner {
+    display: block;
   }
 
-  .yubix-animation{
-    width:85%;
+  .banner .btn {
+    display: inline-block;
+    margin-top: 15px;
   }
 
-  .yubix-core{
-    width:130px;
-    height:130px;
-    border-radius:28px;
+  .footer-inner {
+    flex-direction: column;
   }
-
-  .yubix-core-title{
-    font-size:19px;
-  }
-
 }
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-  .yubix-glow,
-  .yubix-ring,
-  .yubix-ring-2,
-  .yubix-core::before,
-  .product::before,
-  .product-glow{
-    animation:none;
-  }
-
-}
-
-/* =========================================
-   DESKTOP
-========================================= */
-
-@media(min-width:600px){
-
-  body{
-    padding:20px 0;
-    background:#dce7e9;
-  }
-
-  .app{
-    border-radius:30px;
-
-    box-shadow:
-      0 30px 100px rgba(0,0,0,.2);
-  }
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="app">
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#home">YUBIX <span>STORE</span></a>
 
-  <!-- BACKGROUND -->
+      <div class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#catalog">المنتجات</a>
+        <a href="#benefits">علاش Yubix؟</a>
+      </div>
 
-  <div class="bg">
-
-    <div class="blob b1"></div>
-    <div class="blob b2"></div>
-    <div class="blob b3"></div>
-
-    <div class="grid"></div>
-
-  </div>
-
-  <!-- HEADER -->
-
-  <header>
-
-    <nav class="nav">
-
-      <a href="#" class="logo">
-
-        <img
-          src="logo.png"
-          alt="YUBIX STORE"
-          class="logo-image"
-        >
-
-      </a>
-
-      <a
-        href="#order"
-        class="nav-btn"
-      >
-        اطلب الآن
-      </a>
-
+      <div class="nav-actions">
+        <button class="cart-button" id="openCart">
+          🛒 السلة (<span id="cartCount">0</span>)
+        </button>
+        <a class="btn btn-primary" href="#catalog">تسوق الآن</a>
+      </div>
     </nav>
-
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-      <div class="hero-inner">
-
-        <div class="hero-copy">
-
-          <div class="eyebrow">
-
-            <span class="dot"></span>
-
-            العرض متوفر الآن
-
-          </div>
-
-          <h1>
-
-            كل واش تحتاج<br>
-
-            <span>
-              في Pack واحد.
-            </span>
-
-          </h1>
-
-          <p class="hero-desc">
-
-            7 منتجات عملية في باك واحد، بسعر مناسب
-            مع الدفع عند الاستلام والتوصيل داخل الجزائر.
-
-          </p>
-
-          <div class="price">
-
-            4,800
-            <small>دج</small>
-
-          </div>
-
-          <div class="actions">
-
-            <a
-              href="#order"
-              class="btn btn-primary"
-            >
-              🛒 اطلب الـPack الآن
-            </a>
-
-            <a
-              href="tel:0792900576"
-              class="btn btn-secondary"
-            >
-              📞 07 92 90 05 76
-            </a>
-
-          </div>
-
-        </div>
-
-        <!-- PRODUCT -->
-
-        <div class="product-stage">
-
-          <div class="product-glow"></div>
-
-          <div class="product">
-
-            <!-- =================================
-                 ANIMATION SLOT
-                 الأنيميشن موجود هنا
-            ================================== -->
-
-            <div class="animation-slot">
-
-              <div class="yubix-animation">
-
-                <div class="yubix-glow"></div>
-
-                <div class="yubix-ring"></div>
-
-                <div class="yubix-ring-2"></div>
-
-                <div class="yubix-core">
-
-                  <div class="yubix-core-title">
-                    YUBIX
-                  </div>
-
-                  <div class="yubix-core-sub">
-                    PACK 7 EN 1
-                  </div>
-
-                </div>
-
-                <span class="yubix-particle p1"></span>
-                <span class="yubix-particle p2"></span>
-                <span class="yubix-particle p3"></span>
-                <span class="yubix-particle p4"></span>
-                <span class="yubix-particle p5"></span>
-                <span class="yubix-particle p6"></span>
-
-              </div>
-
-            </div>
-
-            <!-- =================================
-                 PACK IMAGE
-                 
-                 غير PACK_IMAGE_URL
-                 إلى اسم صورة الباك عندك
-                 
-                 مثال:
-                 pack.png
-                 pack.jpg
-            ================================== -->
-
-            <img
-              src="PACK_IMAGE_URL"
-              alt="YUBIX STORE Pack 7 en 1"
-
-              onerror="
-                this.style.display='none';
-                document.querySelector('.pack-fallback').style.display='block'
-              "
-            >
-
-            <!-- FALLBACK -->
-
-            <div
-              class="pack-fallback"
-              style="display:none"
-            >
-
-              <b>
-                PACK 7 EN 1
-              </b>
-
-              <span>
-                ضع صورة الباك هنا
-              </span>
-
-            </div>
-
-            <!-- TAGS -->
-
-            <div class="tag t1">
-              7 PRODUCTS
-            </div>
-
-            <div class="tag t2">
-              4,800 DZD
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- PRODUCTS -->
-
-    <section>
-
-      <div class="label">
-        INSIDE THE PACK
-      </div>
-
-      <h2 class="title">
-
-        7 منتجات.<br>
-
-        احتياجات أكثر.
-
-      </h2>
-
-      <p class="desc">
-
-        كل قطعة مختارة باش تكون عملية ومفيدة
-        في الاستعمال اليومي.
-
-      </p>
-
-      <div class="product-grid">
-
-        <div class="card">
-
-          <div class="icon">
-            🎧
-          </div>
-
-          <h3>
-            AirPods Pro
-          </h3>
-
-          <p>
-            سماعات بجودة مليحة للاستعمال اليومي.
-          </p>
-
-        </div>
-
-        <div class="card">
-
-          <div class="icon">
-            🔋
-          </div>
-
-          <h3>
-            Power Bank
-          </h3>
-
-          <p>
-            بطارية 10,000mAh للشحن في أي وقت.
-          </p>
-
-        </div>
-
-        <div class="card">
-
-          <div class="icon">
-            ⚡
-          </div>
-
-          <h3>
-            Fast Charge Cable
-          </h3>
-
-          <p>
-            كابل عملي للشحن السريع.
-          </p>
-
-        </div>
-
-        <div class="card">
-
-          <div class="icon">
-            📱
-          </div>
-
-          <h3>
-            Phone Holder
-          </h3>
-
-          <p>
-            حامل هاتف للاستعمال اليومي.
-          </p>
-
-        </div>
-
-        <div class="card">
-
-          <div class="icon">
-            👝
-          </div>
-
-          <h3>
-            محفظة
-          </h3>
-
-          <p>
-            عملية وسهلة للحمل.
-          </p>
-
-        </div>
-
-        <div class="card">
-
-          <div class="icon">
-            🎁
-          </div>
-
-          <h3>
-            إكسسوار
-          </h3>
-
-          <p>
-            قطعة إضافية ضمن الباك.
-          </p>
-
-        </div>
-
-        <div class="card">
-
-          <div class="icon">
-            ✨
-          </div>
-
-          <h3>
-            إكسسوار إضافي
-          </h3>
-
-          <p>
-            زيادة قيمة العرض.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- FEATURES -->
-
-    <section class="feature-section">
-
-      <div class="label">
-        WHY YUBIX?
-      </div>
-
-      <h2 class="title">
-        أكثر من مجرد Pack.
-      </h2>
-
-      <div class="features">
-
-        <div class="feature">
-
-          <div class="feature-icon">
-            01
-          </div>
-
-          <div>
-
-            <h3>
-              7 منتجات في عرض واحد
-            </h3>
-
-            <p>
-              تلقى مجموعة من الإكسسوارات في طلبية وحدة.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="feature">
-
-          <div class="feature-icon">
-            02
-          </div>
-
-          <div>
-
-            <h3>
-              الدفع عند الاستلام
-            </h3>
-
-            <p>
-              تخلص كي يوصلك الطلب.
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="feature">
-
-          <div class="feature-icon">
-            03
-          </div>
-
-          <div>
-
-            <h3>
-              توصيل داخل الجزائر
-            </h3>
-
-            <p>
-              نوصلو الطلب للعنوان اللي تدخلوا في الفورم.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- OFFER -->
-
-    <section>
-
-      <div class="offer">
-
-        <h2>
-          جاهز للـPack؟ 🔥
-        </h2>
-
-        <p>
-
-          7 منتجات بسعر 4,800 دج
-          والدفع عند الاستلام.
-
-        </p>
-
-        <a
-          href="#order"
-          class="btn btn-primary"
-        >
-          اطلب الآن
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- ORDER -->
-
-    <section id="order">
-
-      <div class="label">
-        ORDER NOW
-      </div>
-
-      <h2 class="title">
-        دير طلبك.
-      </h2>
-
-      <p class="desc">
-
-        عَمّر معلوماتك ونفتحو لك WhatsApp
-        بالطلب جاهز.
-
-      </p>
-
-      <div class="order-card">
-
-        <form id="orderForm">
-
-          <div class="field">
-
-            <label>
-              الاسم واللقب
-            </label>
-
-            <input
-              id="name"
-              type="text"
-              placeholder="مثال: محمد أحمد"
-              required
-            >
-
-          </div>
-
-          <div class="field">
-
-            <label>
-              رقم الهاتف
-            </label>
-
-            <input
-              id="phone"
-              type="tel"
-              placeholder="07 XX XX XX XX"
-              required
-            >
-
-          </div>
-
-          <div class="field">
-
-            <label>
-              الولاية
-            </label>
-
-            <input
-              id="wilaya"
-              type="text"
-              placeholder="مثال: برج بوعريريج"
-              required
-            >
-
-          </div>
-
-          <div class="field">
-
-            <label>
-              البلدية
-            </label>
-
-            <input
-              id="commune"
-              type="text"
-              placeholder="اسم البلدية"
-              required
-            >
-
-          </div>
-
-          <div class="field">
-
-            <label>
-              العنوان
-            </label>
-
-            <textarea
-              id="address"
-              placeholder="العنوان بالتفصيل"
-              required
-            ></textarea>
-
-          </div>
-
-          <button
-            class="submit"
-            type="submit"
-          >
-
-            تأكيد الطلب — 4,800 دج
-
-          </button>
-
-        </form>
-
-      </div>
-
-    </section>
-
-    <!-- FAQ -->
-
-    <section>
-
-      <div class="label">
-        FAQ
-      </div>
-
-      <h2 class="title">
-        عندك سؤال؟
-      </h2>
-
-      <div class="faq">
-
-        <details>
-
-          <summary>
-            هل الدفع عند الاستلام؟
-          </summary>
-
-          <p>
-            نعم، الدفع يكون عند استلام الطلب.
-          </p>
-
-        </details>
-
-        <details>
-
-          <summary>
-            كم سعر الـPack؟
-          </summary>
-
-          <p>
-            السعر الحالي للـPack هو 4,800 دج.
-          </p>
-
-        </details>
-
-        <details>
-
-          <summary>
-            كيفاش نطلب؟
-          </summary>
-
-          <p>
-            عمر الفورم، وبعدها يفتحلك WhatsApp
-            برسالة الطلب جاهزة.
-          </p>
-
-        </details>
-
-        <details>
-
-          <summary>
-            هل كاين توصيل؟
-          </summary>
-
-          <p>
-            نعم، التوصيل متوفر داخل الجزائر.
-          </p>
-
-        </details>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="footer-content">
-
-      <div class="footer-logo">
-
-        YUBIX
-        <span>
-          STORE
-        </span>
-
-      </div>
+  </div>
+</header>
+
+<main>
+  <section class="container hero" id="home">
+    <div>
+      <span class="tag">✦ مرحبًا بيك في YUBIX STORE</span>
+
+      <h1>
+        كل واش تحتاج.<br>
+        <span>في بلاصة وحدة.</span>
+      </h1>
 
       <p>
-        Smart accessories. Better everyday.
+        اكتشف منتجاتنا وإكسسواراتنا العملية، اختار واش يعجبك،
+        زيد المنتجات للسلة وأكد طلبك بسهولة عبر WhatsApp.
       </p>
 
-      <p>
-        © 2026 YUBIX STORE
-      </p>
-
+      <div class="hero-buttons">
+        <a href="#catalog" class="btn btn-primary">🛍️ اكتشف المنتجات</a>
+        <a href="#benefits" class="btn btn-outline">علاش تختارنا؟</a>
+      </div>
     </div>
 
-  </footer>
+    <div class="hero-art">
+      <div class="hero-card">
+        <strong>YU<span>BIX</span></strong>
+        <small>SMART PICKS. BETTER DAYS.</small>
+      </div>
+      <div class="floating float-one">✨ منتجات مختارة</div>
+      <div class="floating float-two">🚚 التوصيل لـ 58 ولاية</div>
+    </div>
+  </section>
 
-  <div
-    class="toast"
-    id="toast"
-  ></div>
+  <section id="catalog">
+    <div class="container">
+      <div class="section-heading">
+        <small>THE CATALOG</small>
+        <h2>اكتشف منتجاتنا</h2>
+        <p>قلب على المنتج اللي تحتاجه، صفّي حسب التصنيف وزيد للسلة.</p>
+      </div>
 
+      <div class="categories" id="categories"></div>
+
+      <div class="tools">
+        <input id="searchInput" type="search" placeholder="🔎 قلب على منتج...">
+        <select id="sortSelect">
+          <option value="featured">الترتيب الافتراضي</option>
+          <option value="low">السعر: الأقل أولًا</option>
+          <option value="high">السعر: الأعلى أولًا</option>
+          <option value="name">حسب الاسم</option>
+        </select>
+      </div>
+
+      <div class="products" id="productGrid"></div>
+      <div class="empty" id="emptyState">ما لقينا حتى منتج. جرّب كلمة أخرى.</div>
+    </div>
+  </section>
+
+  <section id="benefits">
+    <div class="container">
+      <div class="section-heading">
+        <small>WHY YUBIX STORE</small>
+        <h2>تسوق براحة وبلا تعقيد</h2>
+      </div>
+
+      <div class="benefits">
+        <div class="benefit">
+          <strong>💵 الدفع عند الاستلام</strong>
+          <p>تأكد طلبك وخلّص كي يوصلك المنتج.</p>
+        </div>
+        <div class="benefit">
+          <strong>🚚 التوصيل لـ 58 ولاية</strong>
+          <p>دخل معلوماتك باش نجهزولك الطلب ونتواصلوا معاك.</p>
+        </div>
+        <div class="benefit">
+          <strong>💬 طلب سهل عبر WhatsApp</strong>
+          <p>تفاصيل المنتجات والكميات تتبعت في رسالة منظمة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="banner">
+        <div>
+          <h2>لقيت واش يعجبك؟ ✨</h2>
+          <p>اختار المنتجات وكمل طلبك في دقائق.</p>
+        </div>
+        <a href="#catalog" class="btn btn-primary">ابدأ التسوق ←</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <a class="logo" href="#home">YUBIX <span>STORE</span></a>
+      <p>Smart accessories. Better everyday.</p>
+      <p>© <span id="year"></span> YUBIX STORE</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#catalog">المنتجات</a>
+      <a href="https://wa.me/213792900576" target="_blank" rel="noopener">تواصل معنا</a>
+    </div>
+  </div>
+</footer>
+
+<div class="drawer-bg" id="drawerBg"></div>
+
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-header">
+    <h3>سلة التسوق 🛒</h3>
+    <button class="close" id="closeCart">×</button>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <p>المجموع: <span id="cartTotal">0 دج</span></p>
+    <button class="btn btn-primary" id="checkoutBtn">إتمام الطلب ←</button>
+  </div>
+</aside>
+
+<div class="modal-bg" id="orderModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>تأكيد الطلب</h2>
+      <button class="close" id="closeModal">×</button>
+    </div>
+
+    <p class="notice">
+      عمّر معلومات التوصيل، ومن بعد تتفتح رسالة WhatsApp فيها طلبك.
+    </p>
+
+    <form id="orderForm">
+      <input id="customerName" required placeholder="الاسم واللقب">
+      <input id="customerPhone" type="tel" required placeholder="رقم الهاتف">
+      <input id="customerWilaya" required placeholder="الولاية">
+      <input id="customerCommune" required placeholder="البلدية">
+      <textarea id="customerAddress" required placeholder="العنوان بالتفصيل"></textarea>
+      <button type="submit" class="btn btn-primary">تأكيد الطلب عبر WhatsApp ↗</button>
+    </form>
+  </div>
 </div>
 
 <script>
-
-/* =========================================
-   CONFIG
-========================================= */
-
+/* إعدادات المتجر */
 const STORE = {
-
-  name:"YUBIX STORE",
-
-  product:"Pack 7 en 1",
-
-  price:"4,800 دج",
-
-  whatsapp:"213792900576"
-
+  name: "YUBIX STORE",
+  whatsapp: "213792900576"
 };
 
-
-/* =========================================
-   GSAP
-========================================= */
-
-gsap.registerPlugin(ScrollTrigger);
-
-
-/* =========================================
-   PAGE LOAD
-========================================= */
-
-window.addEventListener("load",()=>{
-
-  gsap.from(".nav",{
-
-    y:-30,
-    opacity:0,
-    duration:.8,
-    ease:"power3.out"
-
-  });
-
-
-  gsap.from(".eyebrow",{
-
-    y:20,
-    opacity:0,
-    duration:.7,
-    delay:.2
-
-  });
-
-
-  gsap.from("h1",{
-
-    y:35,
-    opacity:0,
-    duration:1,
-    delay:.3,
-    ease:"power3.out"
-
-  });
-
-
-  gsap.from(".hero-desc",{
-
-    y:20,
-    opacity:0,
-    duration:.7,
-    delay:.5
-
-  });
-
-
-  gsap.from(".price,.actions",{
-
-    y:20,
-    opacity:0,
-    duration:.7,
-    delay:.65,
-    stagger:.1
-
-  });
-
-
-  /* PRODUCT */
-
-  gsap.from(".product",{
-
-    scale:.75,
-    opacity:0,
-    rotationY:20,
-
-    duration:1.2,
-    delay:.4,
-
-    ease:"power3.out"
-
-  });
-
-
-  /* ANIMATION ENTRANCE */
-
-  gsap.from(".yubix-animation",{
-
-    scale:.45,
-    opacity:0,
-
-    rotationY:-35,
-    rotationX:15,
-
-    duration:1.5,
-    delay:.65,
-
-    ease:"power3.out"
-
-  });
-
-
-  /* ANIMATION FLOAT */
-
-  gsap.to(".yubix-animation",{
-
-    y:-10,
-
-    duration:2.8,
-
-    repeat:-1,
-    yoyo:true,
-
-    ease:"sine.inOut"
-
-  });
-
-
-  /* CORE ROTATION */
-
-  gsap.to(".yubix-core",{
-
-    rotationY:360,
-
-    duration:12,
-
-    repeat:-1,
-
-    ease:"none"
-
-  });
-
-
-  /* PARTICLES */
-
-  gsap.utils
-    .toArray(".yubix-particle")
-    .forEach((particle,index)=>{
-
-      gsap.to(particle,{
-
-        y:gsap.utils.random(-25,25),
-
-        x:gsap.utils.random(-20,20),
-
-        scale:gsap.utils.random(.6,1.5),
-
-        opacity:gsap.utils.random(.25,.9),
-
-        duration:
-          gsap.utils.random(1.8,3.5),
-
-        repeat:-1,
-
-        yoyo:true,
-
-        delay:index*.25,
-
-        ease:"sine.inOut"
-
-      });
-
+/*
+  هاذ المنتجات والأسعار تجريبية.
+  بدّلها بالمنتجات والأسعار الحقيقية تاعك.
+  باش تزيد صورة، اكتب اسم ملفها في image،
+  وحط الصورة في نفس مجلد index.html.
+*/
+const PRODUCTS = [
+  {
+    id: 1,
+    name: "Pack 7 en 1",
+    category: "العروض",
+    price: 4800,
+    description: "مجموعة إكسسوارات عملية في عرض واحد.",
+    icon: "🎒",
+    image: "",
+    badge: "عرض خاص"
+  },
+  {
+    id: 2,
+    name: "سماعات Bluetooth",
+    category: "الصوتيات",
+    price: 1800,
+    description: "سماعات لاسلكية للاستعمال اليومي.",
+    icon: "🎧",
+    image: ""
+  },
+  {
+    id: 3,
+    name: "Power Bank 10000mAh",
+    category: "الشحن",
+    price: 2500,
+    description: "بطارية متنقلة للشحن خارج الدار.",
+    icon: "🔋",
+    image: ""
+  },
+  {
+    id: 4,
+    name: "كابل Fast Charge",
+    category: "الشحن",
+    price: 650,
+    description: "كابل للشحن ونقل البيانات.",
+    icon: "⚡",
+    image: ""
+  },
+  {
+    id: 5,
+    name: "حامل الهاتف",
+    category: "إكسسوارات الهاتف",
+    price: 700,
+    description: "حامل عملي للهاتف في الاستعمال اليومي.",
+    icon: "📱",
+    image: ""
+  },
+  {
+    id: 6,
+    name: "محفظة نقود وبطاقات",
+    category: "إكسسوارات",
+    price: 900,
+    description: "محفظة لتنظيم النقود والبطاقات.",
+    icon: "👝",
+    image: ""
+  },
+  {
+    id: 7,
+    name: "حقيبة ظهر",
+    category: "الحقائب",
+    price: 2800,
+    description: "حقيبة عملية للأغراض اليومية.",
+    icon: "🎒",
+    image: ""
+  },
+  {
+    id: 8,
+    name: "سماعات سلكية",
+    category: "الصوتيات",
+    price: 450,
+    description: "سماعات سلكية للاستعمال اليومي.",
+    icon: "🎵",
+    image: ""
+  }
+];
+
+const state = {
+  category: "الكل",
+  search: "",
+  sort: "featured",
+  cart: {}
+};
+
+const $ = selector => document.querySelector(selector);
+
+const money = value =>
+  Number(value).toLocaleString("fr-FR") + " دج";
+
+const escapeHTML = value =>
+  String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+
+function renderCategories() {
+  const categories = [
+    "الكل",
+    ...new Set(PRODUCTS.map(product => product.category))
+  ];
+
+  $("#categories").innerHTML = categories.map(category => `
+    <button
+      class="category ${state.category === category ? "active" : ""}"
+      data-category="${escapeHTML(category)}">
+      ${escapeHTML(category)}
+    </button>
+  `).join("");
+
+  $("#categories").querySelectorAll("[data-category]").forEach(button => {
+    button.addEventListener("click", () => {
+      state.category = button.dataset.category;
+      renderCategories();
+      renderProducts();
     });
+  });
+}
 
+function renderProductImage(product) {
+  if (product.image) {
+    return `
+      <img
+        src="${escapeHTML(product.image)}"
+        alt="${escapeHTML(product.name)}"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="product-emoji" style="display:none">${product.icon}</span>
+    `;
+  }
 
-  /* CARDS */
+  return `<span class="product-emoji">${product.icon}</span>`;
+}
 
-  gsap.utils
-    .toArray(".card")
-    .forEach((card,i)=>{
+function renderProducts() {
+  let products = PRODUCTS.filter(product => {
+    const matchesCategory =
+      state.category === "الكل" ||
+      product.category === state.category;
 
-      gsap.from(card,{
+    const text = (
+      product.name + " " +
+      product.category + " " +
+      product.description
+    ).toLowerCase();
 
-        scrollTrigger:{
+    return matchesCategory && text.includes(state.search.toLowerCase());
+  });
 
-          trigger:card,
+  if (state.sort === "low") {
+    products.sort((a, b) => a.price - b.price);
+  }
 
-          start:"top 88%"
+  if (state.sort === "high") {
+    products.sort((a, b) => b.price - a.price);
+  }
 
-        },
+  if (state.sort === "name") {
+    products.sort((a, b) => a.name.localeCompare(b.name, "ar"));
+  }
 
-        y:35,
+  $("#productGrid").innerHTML = products.map(product => `
+    <article class="product">
+      <div class="product-image">
+        ${product.badge ? `
+          <span style="
+            position:absolute;
+            top:10px;
+            right:10px;
+            z-index:2;
+            background:var(--cyan);
+            color:#061014;
+            border-radius:7px;
+            padding:6px 8px;
+            font-size:9px;
+            font-weight:800">
+            ${escapeHTML(product.badge)}
+          </span>
+        ` : ""}
 
-        opacity:0,
+        ${renderProductImage(product)}
+      </div>
 
-        duration:.7,
+      <div class="product-info">
+        <div class="product-category">
+          ${escapeHTML(product.category)}
+        </div>
 
-        delay:(i%2)*.08,
+        <h3>${escapeHTML(product.name)}</h3>
 
-        ease:"power3.out"
+        <p>${escapeHTML(product.description)}</p>
 
-      });
+        <div class="product-bottom">
+          <span class="price">${money(product.price)}</span>
 
+          <button class="add-button" data-add="${product.id}">
+            + أضف للسلة
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  $("#emptyState").style.display = products.length ? "none" : "block";
+
+  $("#productGrid").querySelectorAll("[data-add]").forEach(button => {
+    button.addEventListener("click", () => {
+      addToCart(Number(button.dataset.add));
     });
+  });
+}
 
+function addToCart(id) {
+  state.cart[id] = (state.cart[id] || 0) + 1;
+  renderCart();
+  alert("تزاد المنتج للسلة ✓");
+}
 
-  /* FEATURES */
+function cartProducts() {
+  return Object.entries(state.cart)
+    .map(([id, quantity]) => ({
+      product: PRODUCTS.find(item => item.id === Number(id)),
+      quantity
+    }))
+    .filter(item => item.product);
+}
 
-  gsap.utils
-    .toArray(".feature")
-    .forEach((item,i)=>{
+function cartTotal() {
+  return cartProducts().reduce(
+    (total, item) => total + item.product.price * item.quantity,
+    0
+  );
+}
 
-      gsap.from(item,{
+function changeQuantity(id, difference) {
+  state.cart[id] = (state.cart[id] || 0) + difference;
 
-        scrollTrigger:{
+  if (state.cart[id] <= 0) {
+    delete state.cart[id];
+  }
 
-          trigger:item,
+  renderCart();
+}
 
-          start:"top 88%"
+function renderCart() {
+  const items = cartProducts();
 
-        },
-
-        x:40,
-
-        opacity:0,
-
-        duration:.7,
-
-        delay:i*.1,
-
-        ease:"power3.out"
-
-      });
-
-    });
-
-
-  /* SECTION TITLES */
-
-  gsap.utils
-    .toArray("section")
-    .forEach(section=>{
-
-      gsap.from(
-
-        section.querySelectorAll(
-          ".label,.title,.desc"
-        ),
-
-        {
-
-          scrollTrigger:{
-
-            trigger:section,
-
-            start:"top 85%"
-
-          },
-
-          y:20,
-
-          opacity:0,
-
-          duration:.6,
-
-          stagger:.08,
-
-          ease:"power2.out"
-
-        }
-
-      );
-
-    });
-
-});
-
-
-/* =========================================
-   PRODUCT 3D MOUSE TILT
-========================================= */
-
-const product =
-  document.querySelector(".product");
-
-
-document.addEventListener("mousemove",(e)=>{
-
-  if(window.innerWidth < 600)
-    return;
-
-  const x =
-    (window.innerWidth/2 - e.clientX) / 35;
-
-  const y =
-    (window.innerHeight/2 - e.clientY) / 35;
-
-  product.style.transform =
-    `perspective(900px)
-     rotateY(${x}deg)
-     rotateX(${y}deg)`;
-
-});
-
-
-/* =========================================
-   ANIMATION PARALLAX
-========================================= */
-
-if(window.innerWidth >= 600){
-
-  const animation =
-    document.querySelector(".yubix-animation");
-
-  document.addEventListener(
-    "mousemove",
-    (e)=>{
-
-      const x =
-        (window.innerWidth/2 - e.clientX) / 45;
-
-      const y =
-        (window.innerHeight/2 - e.clientY) / 45;
-
-      gsap.to(animation,{
-
-        rotationY:x,
-
-        rotationX:-y,
-
-        duration:.7,
-
-        ease:"power2.out",
-
-        overwrite:true
-
-      });
-
-    }
+  const count = items.reduce(
+    (total, item) => total + item.quantity,
+    0
   );
 
-}
+  $("#cartCount").textContent = count;
+  $("#cartTotal").textContent = money(cartTotal());
 
+  if (!items.length) {
+    $("#cartItems").innerHTML = `
+      <p style="color:var(--muted);font-size:12px;line-height:2;padding-top:20px">
+        السلة مازال فارغة 🛒<br>
+        اختار المنتجات اللي تحتاجها.
+      </p>
+    `;
+    return;
+  }
 
-/* =========================================
-   BACKGROUND FLOATING
-========================================= */
+  $("#cartItems").innerHTML = items.map(({product, quantity}) => `
+    <div class="cart-item">
+      <div>
+        <h4>${escapeHTML(product.name)}</h4>
+        <p>${money(product.price * quantity)}</p>
 
-gsap.to(".b1",{
+        <div class="quantity">
+          <button data-quantity="${product.id}" data-difference="-1">−</button>
+          <span>${quantity}</span>
+          <button data-quantity="${product.id}" data-difference="1">+</button>
+        </div>
+      </div>
 
-  x:35,
-  y:45,
+      <button class="remove" data-remove="${product.id}">×</button>
+    </div>
+  `).join("");
 
-  duration:6,
-
-  repeat:-1,
-  yoyo:true,
-
-  ease:"sine.inOut"
-
-});
-
-
-gsap.to(".b2",{
-
-  x:-30,
-  y:-35,
-
-  duration:7,
-
-  repeat:-1,
-  yoyo:true,
-
-  ease:"sine.inOut"
-
-});
-
-
-gsap.to(".b3",{
-
-  x:25,
-  y:-30,
-
-  duration:8,
-
-  repeat:-1,
-  yoyo:true,
-
-  ease:"sine.inOut"
-
-});
-
-
-/* =========================================
-   WHATSAPP ORDER
-========================================= */
-
-const form =
-  document.getElementById("orderForm");
-
-
-const toast =
-  document.getElementById("toast");
-
-
-function showToast(text){
-
-  toast.textContent=text;
-
-  toast.classList.add("show");
-
-  setTimeout(()=>{
-
-    toast.classList.remove("show");
-
-  },3500);
-
-}
-
-
-form.addEventListener(
-  "submit",
-  (e)=>{
-
-    e.preventDefault();
-
-    const name =
-      document
-        .getElementById("name")
-        .value
-        .trim();
-
-
-    const phone =
-      document
-        .getElementById("phone")
-        .value
-        .trim();
-
-
-    const wilaya =
-      document
-        .getElementById("wilaya")
-        .value
-        .trim();
-
-
-    const commune =
-      document
-        .getElementById("commune")
-        .value
-        .trim();
-
-
-    const address =
-      document
-        .getElementById("address")
-        .value
-        .trim();
-
-
-    if(
-      !name ||
-      !phone ||
-      !wilaya ||
-      !commune ||
-      !address
-    ){
-
-      showToast(
-        "من فضلك عَمّر جميع المعلومات."
+  $("#cartItems").querySelectorAll("[data-quantity]").forEach(button => {
+    button.addEventListener("click", () => {
+      changeQuantity(
+        Number(button.dataset.quantity),
+        Number(button.dataset.difference)
       );
+    });
+  });
 
-      return;
+  $("#cartItems").querySelectorAll("[data-remove]").forEach(button => {
+    button.addEventListener("click", () => {
+      delete state.cart[Number(button.dataset.remove)];
+      renderCart();
+    });
+  });
+}
 
-    }
+function openCart() {
+  $("#cartDrawer").classList.add("open");
+  $("#drawerBg").classList.add("open");
+}
 
+function closeCart() {
+  $("#cartDrawer").classList.remove("open");
+  $("#drawerBg").classList.remove("open");
+}
 
-    const message =
+function openOrder() {
+  if (!cartProducts().length) {
+    alert("زيد منتج واحد على الأقل للسلة أولًا.");
+    return;
+  }
 
-`🛍️ طلب جديد — YUBIX STORE
+  closeCart();
+  $("#orderModal").classList.add("open");
+}
 
-📦 المنتج: ${STORE.product}
-💰 السعر: ${STORE.price}
+function closeOrder() {
+  $("#orderModal").classList.remove("open");
+}
+
+$("#searchInput").addEventListener("input", event => {
+  state.search = event.target.value.trim();
+  renderProducts();
+});
+
+$("#sortSelect").addEventListener("change", event => {
+  state.sort = event.target.value;
+  renderProducts();
+});
+
+$("#openCart").addEventListener("click", openCart);
+$("#closeCart").addEventListener("click", closeCart);
+$("#drawerBg").addEventListener("click", closeCart);
+$("#checkoutBtn").addEventListener("click", openOrder);
+$("#closeModal").addEventListener("click", closeOrder);
+
+$("#orderModal").addEventListener("click", event => {
+  if (event.target === $("#orderModal")) {
+    closeOrder();
+  }
+});
+
+$("#orderForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (!cartProducts().length) {
+    alert("السلة فارغة.");
+    closeOrder();
+    return;
+  }
+
+  const name = $("#customerName").value.trim();
+  const phone = $("#customerPhone").value.trim();
+  const wilaya = $("#customerWilaya").value.trim();
+  const commune = $("#customerCommune").value.trim();
+  const address = $("#customerAddress").value.trim();
+
+  const items = cartProducts().map(({product, quantity}) =>
+    `• ${product.name} × ${quantity} = ${money(product.price * quantity)}`
+  ).join("\n");
+
+  const message =
+`🛍️ طلب جديد — ${STORE.name}
+
+📦 المنتجات:
+${items}
+
+💰 المجموع: ${money(cartTotal())}
+🚚 التوصيل: يتم تأكيد التكلفة
+💳 الدفع: عند الاستلام
 
 👤 الاسم: ${name}
 📞 الهاتف: ${phone}
 📍 الولاية: ${wilaya}
 🏘️ البلدية: ${commune}
-🏠 العنوان: ${address}
+🏠 العنوان: ${address}`;
 
-💳 الدفع: عند الاستلام`;
+  const whatsappURL =
+    "https://wa.me/" + STORE.whatsapp +
+    "?text=" + encodeURIComponent(message);
 
+  window.open(whatsappURL, "_blank", "noopener");
+  closeOrder();
+});
 
-    const url =
-      `https://wa.me/${STORE.whatsapp}?text=${encodeURIComponent(message)}`;
+$("#year").textContent = new Date().getFullYear();
 
-
-    window.open(
-      url,
-      "_blank"
-    );
-
-
-    showToast(
-      "تم تجهيز الطلب، سيتم فتح WhatsApp."
-    );
-
-  }
-);
-
-
-/* =========================================
-   REDUCE MOTION
-========================================= */
-
-if(
-  window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches
-){
-
-  gsap.globalTimeline.timeScale(0);
-
-}
-
+renderCategories();
+renderProducts();
+renderCart();
 </script>
 
 </body>
